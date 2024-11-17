@@ -8,6 +8,10 @@ public class MiscStuff : MonoBehaviour
     internal static Ray FlooRay;
     internal string floortag;
     public Image Crosshair;
+    private void Start()
+    {
+        Application.targetFrameRate = 120;
+    }
     void Update()
     {
 
