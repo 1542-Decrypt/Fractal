@@ -453,6 +453,7 @@
 "Assets/Scripts/Nodes/on_start_node.cs"
 "Assets/Scripts/Nodes/relay_node.cs"
 "Assets/Scripts/Nodes/sound_node.cs"
+"Assets/Scripts/Nodes/title_node.cs"
 "Assets/Scripts/Nodes/train_node.cs"
 "Assets/Scripts/Nodes/wait_node.cs"
 "Assets/Scripts/quit.cs"
