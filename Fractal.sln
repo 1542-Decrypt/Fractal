@@ -111,6 +111,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AdaptivePerformance.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.AdaptivePerformance.Simulator.Extension", "Unity.AdaptivePerformance.Simulator.Extension.csproj", "{9F953C16-0226-0018-945D-EAB2F2EFDCF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{771AC626-A878-C944-1FCD-E4398FA41850}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Bindings.OpenImageIO.Editor", "Unity.Bindings.OpenImageIO.Editor.csproj", "{3828911B-1C1E-ECA1-4218-5DC7E53877D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Collections.Editor", "Unity.Collections.Editor.csproj", "{6292E6CA-BCE0-7EEE-1BFE-0523060AB084}"
@@ -407,6 +409,10 @@ Global
 		{9F953C16-0226-0018-945D-EAB2F2EFDCF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F953C16-0226-0018-945D-EAB2F2EFDCF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F953C16-0226-0018-945D-EAB2F2EFDCF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771AC626-A878-C944-1FCD-E4398FA41850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771AC626-A878-C944-1FCD-E4398FA41850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771AC626-A878-C944-1FCD-E4398FA41850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771AC626-A878-C944-1FCD-E4398FA41850}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3828911B-1C1E-ECA1-4218-5DC7E53877D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3828911B-1C1E-ECA1-4218-5DC7E53877D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3828911B-1C1E-ECA1-4218-5DC7E53877D7}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -3,24 +3,80 @@
   "WorkspaceRootPath": "E:\\GitHub\\Fractal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|e:\\github\\fractal\\assets\\scripts\\nodes\\title_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\title_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|e:\\github\\fractal\\assets\\scripts\\nodes\\soundscape_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\soundscape_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\fade_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\fade_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\sound_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\sound_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\charactercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\charactercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\doormaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\doormaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\swaycamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\swaycamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\mouselook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mouselook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\subtitle_handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\subtitle_handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\lasergunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lasergunlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\train_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\train_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\miscstuff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\miscstuff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\charactercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\charactercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\footsteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\footsteps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\title_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\title_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\checkground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\checkground.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\load_scene_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\load_scene_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\fade_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\fade_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\on_start_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\on_start_node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\shootlaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shootlaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\fizzler_logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fizzler_logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\laserreciever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\laserreciever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,70 +86,237 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "fade_node.cs",
               "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\fade_node.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\fade_node.cs",
               "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\fade_node.cs",
               "RelativeToolTip": "Assets\\Scripts\\Nodes\\fade_node.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T16:43:38.732Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "DoorMaster.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\DoorMaster.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DoorMaster.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\DoorMaster.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DoorMaster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T20:00:16.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "subtitle_handler.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\subtitle_handler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\subtitle_handler.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\subtitle_handler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Nodes\\subtitle_handler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T19:39:35.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LaserGunLogic.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\LaserGunLogic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LaserGunLogic.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\LaserGunLogic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LaserGunLogic.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T19:28:10.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MouseLook.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\MouseLook.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MouseLook.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\MouseLook.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MouseLook.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:22:31.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SwayCamera.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\SwayCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SwayCamera.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\SwayCamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SwayCamera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:11:45.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "train_node.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\train_node.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\train_node.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\train_node.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Nodes\\train_node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T16:39:29.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "title_node.cs",
               "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\title_node.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\title_node.cs",
               "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\title_node.cs",
               "RelativeToolTip": "Assets\\Scripts\\Nodes\\title_node.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwA4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T16:42:49.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T16:42:49.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "MiscStuff.cs",
               "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\MiscStuff.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MiscStuff.cs",
               "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\MiscStuff.cs",
               "RelativeToolTip": "Assets\\Scripts\\MiscStuff.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T19:07:18.235Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CharacterControl.cs",
-              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\CharacterControl.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CharacterControl.cs",
-              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\CharacterControl.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CharacterControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "sound_node.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\sound_node.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\sound_node.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\sound_node.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Nodes\\sound_node.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAjwCoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:03:12.524Z"
+              "WhenOpened": "2024-11-28T01:00:13.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "soundscape_manager.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\soundscape_manager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\soundscape_manager.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\soundscape_manager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Nodes\\soundscape_manager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T19:42:30.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ShootLaser.cs",
               "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\ShootLaser.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ShootLaser.cs",
               "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\ShootLaser.cs",
               "RelativeToolTip": "Assets\\Scripts\\ShootLaser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAwwAwAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T18:03:01.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Fizzler_logic.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Fizzler_logic.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Fizzler_logic.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Fizzler_logic.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Fizzler_logic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T16:39:42.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CheckGround.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\CheckGround.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CheckGround.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\CheckGround.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CheckGround.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:28:45.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FootSteps.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\FootSteps.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FootSteps.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\FootSteps.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FootSteps.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwDMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T17:38:01.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CharacterControl.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\CharacterControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CharacterControl.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\CharacterControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CharacterControl.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAowJgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:03:12.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LaserReciever.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\LaserReciever.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LaserReciever.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\LaserReciever.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LaserReciever.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T16:39:50.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "load_scene_node.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\load_scene_node.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\load_scene_node.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\load_scene_node.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Nodes\\load_scene_node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T20:44:13.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "on_start_node.cs",
+              "DocumentMoniker": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\on_start_node.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Nodes\\on_start_node.cs",
+              "ToolTip": "E:\\GitHub\\Fractal\\Assets\\Scripts\\Nodes\\on_start_node.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Nodes\\on_start_node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T21:57:19.272Z"
             }
           ]
         }

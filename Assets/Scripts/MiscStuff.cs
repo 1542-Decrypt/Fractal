@@ -6,6 +6,7 @@ public class MiscStuff : MonoBehaviour
     public bool DebugMode;
     public static Ray Camray;
     internal static Ray FlooRay;
+    [SerializeField]
     internal string floortag;
     public Image Crosshair;
     private void Start()

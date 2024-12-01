@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Chamber01.unity
+    path: Assets/Scenes/Chambers/Chamber01.unity
     guid: 7ca66757329ba6e4899d892030f0c722
   - enabled: 1
     path: Assets/Scenes/Base.unity
     guid: 1011d49866ebaed4d8361a150d11e5d4
+  - enabled: 1
+    path: Assets/Scenes/Core Scenes/Soundscapes.unity
+    guid: a1261cc5ac371354b8103f988171c00a
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 00ae3899767ad354baf244377eb81ca7
+  - enabled: 1
+    path: Assets/Scenes/testground.unity
+    guid: 437e0879af27d7a429858ebf1201cc3a
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3abd58749013881479f8ff23ed351334, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: f96030184f5ccf342a1d5c18ffefc3db, type: 2}

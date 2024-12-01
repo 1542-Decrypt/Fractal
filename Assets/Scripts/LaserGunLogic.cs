@@ -1,5 +1,4 @@
 using UnityEngine.UI;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserGunLogic : MonoBehaviour
@@ -71,7 +70,8 @@ public class LaserGunLogic : MonoBehaviour
                         Cam.Play("throwback");
                         shootPart.Play();
                         base.gameObject.GetComponent<Animation>().Play(ShootAnimName);
-                        base.gameObject.GetComponent<AudioSource>().Play();
+                        //this is hardcoded bc I dont see reason not to
+                        base.transform.GetChild(0).GetComponent<sound_node>().PlayAudio(1);
                         if (Mono)
                         {
                             Color col = Crosshair.color;

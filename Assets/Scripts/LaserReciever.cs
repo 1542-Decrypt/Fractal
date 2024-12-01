@@ -11,7 +11,7 @@ public class LaserReciever : MonoBehaviour
     public UnityEvent Output_OnEnable;
     public UnityEvent Output_OnDisable;
     [SerializeField]int Queue;
-    void Start()
+    void Awake()
     {
         idleSound = base.transform.Find("idlesound").GetComponent<AudioSource>();
         disound = base.transform.Find("deactivate").GetComponent<AudioSource>();

@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5629985099923670536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4751249634693422715}
+  - component: {fileID: 6392201955886577111}
+  m_Layer: 0
+  m_Name: SoundscapeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: 97332a5a67bfc5d4a8cfbfd5953fc878, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4751249634693422715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629985099923670536}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6478903, y: 3, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6392201955886577111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629985099923670536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c81a80e374cf4ba90c9813cf8f481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TempSoundscapes:
+  - sound: {fileID: 8300000, guid: 205b63e27c394d44f9ebd3b9d3e4e2a4, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: e7fdde976bbda9e4f820da4272f0eb1e, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Laser Gun shoot]'
+    color: {r: 0.54886925, g: 0.6132076, b: 0.49461555, a: 0}
+  - sound: {fileID: 8300000, guid: 670d2df94d36932418393a63358f76ea, type: 3}
+    advanced: 1
+    subtitles: 1
+    text: '[Sliding door closing]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: a4636d541348eca42bcb2fc9273dc1ba, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Sliding door opening]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: d4cf74c3f16ec2f49b4459185318b4cc, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Door closing]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: e05b95222f24f034d92c6dbc3a8d7096, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Push door opening]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 9f03a123a79f4e346bf6feef3b5f2a0c, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[beep]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 83eb0b97d670a804abfa44bbda55a0b5, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[access denied]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 01fdad50e92ec7a47b51e6360962cfdd, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Elevator door closing]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: d65fa200cbb5da9449fec0d1f6e8b636, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 58d16a907299c8d46a208348e73a241a, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Elevator door opening]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: f6ecb371253a8df4f83ac8726f8d4311, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Elevator stopping]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: f503eff3c9b08e54e9d4c69703c677bb, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Laser reciever activation]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 3026ccb35eae9e142b8e93c53fb90026, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Laser reciever deactivation]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 850f94b17b85e004a9507e17371f2cbf, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 9a19ebd85dfadf44182d8e2c7973659d, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 461be13699288964e9dcae43ca14bb6c, type: 3}
+    advanced: 1
+    subtitles: 0
+    text: '[Door opening]'
+    color: {r: 0.54901963, g: 0.6117647, b: 0.49411765, a: 0}
+  - sound: {fileID: 8300000, guid: 75d4c5bcc25390b42ad90ceddc71274e, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 8c8486f832e154843ad596d930d01ed5, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 3277b4040a16bd347adac40ee253977e, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 845aa351c012e4d459b173b654fbc2ea, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: f69b8a554da2fed45a1218dcf1f8eca3, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 0454a456efb347a49ae05b77ac0319c9, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 05bb97cb81ff4e54b9240f06fc7d5cf7, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+  - sound: {fileID: 8300000, guid: 75d4c5bcc25390b42ad90ceddc71274e, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0, g: 0, b: 0, a: 0}

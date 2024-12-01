@@ -52,7 +52,7 @@ public class FootSteps : MonoBehaviour
     {
         for (int i = 0; randomNumber == lastNumber && i < maxAttempts; i++)
         {
-            randomNumber = Random.Range(0, 6);
+            randomNumber = Random.Range(0, jump.Length);
         }
         lastNumber = randomNumber;
         AudioSource audio = GetComponent<AudioSource>();

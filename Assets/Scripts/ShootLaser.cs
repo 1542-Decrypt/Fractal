@@ -16,7 +16,7 @@ public class ShootLaser : MonoBehaviour
     public Image crosshair;
     internal Vector3 bufPosition, bufDirection;
     int RevID=0;
-    private void Start()
+    private void Awake()
     {
         if (IsMono)
         {
@@ -68,7 +68,7 @@ public class ShootLaser : MonoBehaviour
     }
     private void Update()
     {
-        if (GameObject.Find(LaserName) != null) {
+        if (beam != null) {
         if (GameObject.Find(LaserName).transform.childCount > 2 && beam.endID != RevID)
         {
           Destroy(GameObject.Find(LaserName + "end" + (RevID).ToString()));

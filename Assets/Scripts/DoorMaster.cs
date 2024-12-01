@@ -5,21 +5,17 @@ using UnityEngine;
 public class DoorMaster : MonoBehaviour
 {
     [SerializeField]
-    AudioClip openSound, closeSound;
+    private int openSoundID, closeSoundID;
     [SerializeField]
-    AudioSource soundPlayer;
+    private sound_node soundPlayer;
     public void Open_Door()
     {
-        soundPlayer.Stop();
-        base.gameObject.GetComponent<Animation>().Play("OpenDoor");
-        soundPlayer.clip = openSound;
-        soundPlayer.Play();
+        soundPlayer.PlayAudio(openSoundID);
+        base.GetComponent<Animation>().Play("OpenDoor");
     }
     public void Close_Door()
     {
-        soundPlayer.Stop();
-        base.gameObject.GetComponent<Animation>().Play("CloseDoor");
-        soundPlayer.clip = closeSound;
-        soundPlayer.Play();
+        soundPlayer.PlayAudio(closeSoundID);
+        base.GetComponent<Animation>().Play("CloseDoor");
     }
 }

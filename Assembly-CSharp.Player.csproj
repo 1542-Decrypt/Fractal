@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\LinkageHelper.cs" />
     <Compile Include="Assets\Scripts\Nodes\relay_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\title_node.cs" />
+    <Compile Include="Assets\Scripts\Nodes\load_scene_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\anim_node.cs" />
     <Compile Include="Assets\Scripts\MiscStuff.cs" />
     <Compile Include="Assets\Scripts\Interaction.cs" />
@@ -81,12 +82,12 @@
     <Compile Include="Assets\Scripts\Keycodes.cs" />
     <Compile Include="Assets\Scripts\LaserGunLogic.cs" />
     <Compile Include="Assets\Scripts\DoorMaster.cs" />
-    <Compile Include="Assets\Scripts\Nodes\next_stage_node.cs" />
     <Compile Include="Assets\Scripts\CheckGround.cs" />
+    <Compile Include="Assets\Scripts\Nodes\subtitle_handler.cs" />
     <Compile Include="Assets\Scripts\SwayCamera.cs" />
+    <Compile Include="Assets\Scripts\Nodes\soundscape_manager.cs" />
     <Compile Include="Assets\Scripts\quit.cs" />
     <Compile Include="Assets\Scripts\ShootLaser.cs" />
-    <Compile Include="Assets\Scripts\CheckAnim.cs" />
     <Compile Include="Assets\Scripts\Nodes\LaserDisabler.cs" />
     <Compile Include="Assets\Scripts\Nodes\door_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\fade_node.cs" />

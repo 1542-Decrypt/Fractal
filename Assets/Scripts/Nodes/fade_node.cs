@@ -10,7 +10,7 @@ public class fade_node : MonoBehaviour
     RawImage Tint;
     float opacity = 1;
     bool started = false;
-    private void Start()
+    private void Awake()
     {
         Tint = GameObject.Find("fade_helper").GetComponent<RawImage>();
     }

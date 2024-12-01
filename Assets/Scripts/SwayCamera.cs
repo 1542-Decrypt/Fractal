@@ -9,19 +9,21 @@ public class SwayCamera : MonoBehaviour
     public float intensity = 10f;
     public GameObject Obj;
     public string NameAnimation;
+    private CharacterControl fps;
 
     Vector3 startLocalPosition;
     Quaternion originalRotation;
 
     void Start()
     {
+        fps = GameObject.FindAnyObjectByType<CharacterControl>();
         originalRotation = transform.localRotation;
     }
 
     void Update()
     {
         Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if ((targetVelocity.x != 0 || targetVelocity.z != 0) && CharacterControl.walk == true) // Если игрок движется
+        if ((targetVelocity.x != 0 || targetVelocity.z != 0) && fps.canMove == true) // If player is moving
         {
             Obj.GetComponent<Animation>().Play(NameAnimation);
         }   
