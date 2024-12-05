@@ -17,6 +17,9 @@ public class soundscape_manager : MonoBehaviour
         public string text;
         [Tooltip("Color of a subtitle")]
         public Color color;
+        [Range(0f, 1f)]
+        public float volume;
+        public bool Loop;
     }
     public void Awake()
     {

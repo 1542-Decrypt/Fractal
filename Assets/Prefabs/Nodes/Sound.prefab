@@ -45,6 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudiatedObject: {fileID: 0}
-  subtitle_object: {fileID: 0}
-  Loop: 1
+  Loop: 0
   TextPrefab: {fileID: 709664951721094632, guid: be4499c7601937342ab15f676ca94b2d, type: 3}

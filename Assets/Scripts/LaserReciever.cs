@@ -4,19 +4,14 @@ using UnityEngine.Events;
 
 public class LaserReciever : MonoBehaviour
 {
-    AudioSource idleSound, disound,ensound;
+    public sound_node soundManager;
+    public int enableID, idleID, disableID;
     bool Enabled = false;
     public bool Is_Reciever = false;
     public Color neededColor;
     public UnityEvent Output_OnEnable;
     public UnityEvent Output_OnDisable;
     [SerializeField]int Queue;
-    void Awake()
-    {
-        idleSound = base.transform.Find("idlesound").GetComponent<AudioSource>();
-        disound = base.transform.Find("deactivate").GetComponent<AudioSource>();
-        ensound = base.transform.Find("activate").GetComponent<AudioSource>();
-    }
     private void Update()
     {
         if (Queue < 0)
@@ -33,17 +28,17 @@ public class LaserReciever : MonoBehaviour
                 Queue += 1;
                 if (Enabled == false)
                 {
-                    ensound.Play();
+                    soundManager.PlayAudio(enableID);
                     if (Is_Reciever)
                     {
                         base.GetComponent<Animation>().Play("Recieve");
                         base.GetComponent<Animation>().PlayQueued("Actidle");
-                        idleSound.PlayDelayed(2);
+                        soundManager.PlayAudioDelay(idleID, 2000);
                     }
                     else
                     {
                         base.GetComponent<Animation>().Play("active_r_idle");
-                        idleSound.Play();
+                        soundManager.PlayAudio(idleID);
                     }
                     Output_OnEnable.Invoke();
                     Enabled = true;
@@ -57,8 +52,9 @@ public class LaserReciever : MonoBehaviour
         await Task.Delay(50);
         if (Queue <= 0 && Enabled)
         {
-            idleSound.Stop();
-            disound.Play();
+            //rare stop audio usage here
+            soundManager.StopAudio();
+            soundManager.PlayAudio(disableID);
             if (Is_Reciever)
             {
                 base.GetComponent<Animation>().Stop("Actidle");

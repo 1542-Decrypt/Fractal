@@ -4,19 +4,18 @@ public class Fizzler_logic : MonoBehaviour
 {
     [SerializeField] Transform F, B;
     string OnAnim, OffAnim;
-    AudioSource openSound, closeSound;
+    public sound_node SndMng;
+    public int enableID, disableID;
     private void Awake()
     {
         F = transform.Find("front");
         B = transform.Find("back");
         OnAnim = name + "_on";
         OffAnim = name + "_off";
-        openSound = transform.Find("soundOpen").GetComponent<AudioSource>();
-        closeSound = transform.Find("soundClose").GetComponent<AudioSource>();
     }
     public void Enable()
     {
-        //openSound.Play();
+        SndMng.PlayAudio(enableID);
         StopAnimation(F, OffAnim);
         StopAnimation(B, OffAnim);
         PlayAnimation(F, OnAnim);
@@ -24,7 +23,7 @@ public class Fizzler_logic : MonoBehaviour
     }
     public void Disable()
     {
-        //closeSound.Play();
+        SndMng.PlayAudio(disableID);
         StopAnimation(F, OnAnim);
         StopAnimation(B, OnAnim);
         PlayAnimation(F, OffAnim);

@@ -8,7 +8,7 @@ public class sound_node : MonoBehaviour
     [Tooltip("The object that will emit sound. Will be set automatically to this objects parent if not set at first.")]
     public AudioSource AudiatedObject;
     private GameObject subtitle_object;
-    public bool Loop;
+    bool Loop;
     AudioClip clip;
     public GameObject TextPrefab;
     public void Awake()
@@ -22,6 +22,7 @@ public class sound_node : MonoBehaviour
     }
     async public void PlayAudio(int SoundID)
     {
+        Loop = soundscape_manager.soundscapes[SoundID].Loop;
         //Default hold time. + Checking if sound should be looped or not.
         float SoundLength = 1000;
         clip = soundscape_manager.soundscapes[SoundID].sound;
@@ -33,6 +34,7 @@ public class sound_node : MonoBehaviour
         {
             AudiatedObject.loop = false;
         }
+        AudiatedObject.volume = soundscape_manager.soundscapes[SoundID].volume;
         AudiatedObject.clip = clip;
         AudiatedObject.Play();
         //Preventing issues with looped sounds (yes, moving elevator, thats about you)
@@ -48,6 +50,7 @@ public class sound_node : MonoBehaviour
         newtext.GetComponent<TextMeshProUGUI>().text = soundscape_manager.soundscapes[SoundID].text;
         SetColorNoAlpha(SoundID, newtext.GetComponent<TextMeshProUGUI>());
         subtitle_handler.texts.Add(newtext);
+        print(subtitle_handler.texts.Count);
         //Setting holdTime for subtitle
         if (SoundLength > 1)
             SoundLength = AudiatedObject.clip.length * 1000;
@@ -67,9 +70,11 @@ public class sound_node : MonoBehaviour
     }
     public void StopAudio()
     {
-        //Mostly unused by why dont have it.
+        //Mostly unused but why dont have it.
+        AudiatedObject.loop = false;
         AudiatedObject.Stop();
-        subtitle_object.GetComponent<Animation>().Play("HideSubt");
+        if (subtitle_handler.texts.Count <= 1)
+            subtitle_object.GetComponent<Animation>().Play("HideSubt");
     }
     void SetColorNoAlpha(int SoundID, TextMeshProUGUI text)
     {
@@ -79,5 +84,10 @@ public class sound_node : MonoBehaviour
         col.g = soundscape_manager.soundscapes[SoundID].color.g;
         col.b = soundscape_manager.soundscapes[SoundID].color.b;
         text.color = col;
+    }
+    async public void PlayAudioDelay(int SoundID, int DelayTime)
+    {
+        await Task.Delay(DelayTime);
+        PlayAudio(SoundID);
     }
 }
