@@ -168,8 +168,8 @@ public class CharacterControl : MonoBehaviour
         else
         {
             characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
+            walkSpeed = 4f;
+            runSpeed = 4f;
         }
 
         characterController.Move(moveDirection * Time.deltaTime);

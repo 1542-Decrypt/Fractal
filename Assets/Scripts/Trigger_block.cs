@@ -1,6 +1,7 @@
 using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Trigger_block : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class Trigger_block : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag != "Player")
+        {
+            return;
+        }
         if (TrigType == TriggerType.Once)
         {
             FireOnce(); 

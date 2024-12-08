@@ -66,6 +66,7 @@ public class sound_node : MonoBehaviour
         await Task.Delay(1000);
         //Removing text object from subtitle object to not stack them up
         subtitle_handler.texts.Remove(newtext);
+        print(subtitle_handler.texts.Count);
         Destroy(newtext);
     }
     public void StopAudio()
@@ -73,8 +74,6 @@ public class sound_node : MonoBehaviour
         //Mostly unused but why dont have it.
         AudiatedObject.loop = false;
         AudiatedObject.Stop();
-        if (subtitle_handler.texts.Count <= 1)
-            subtitle_object.GetComponent<Animation>().Play("HideSubt");
     }
     void SetColorNoAlpha(int SoundID, TextMeshProUGUI text)
     {

@@ -457,6 +457,8 @@
 "Assets/Scripts/Nodes/title_node.cs"
 "Assets/Scripts/Nodes/train_node.cs"
 "Assets/Scripts/Nodes/wait_node.cs"
+"Assets/Scripts/Pickable.cs"
+"Assets/Scripts/Pickup_system.cs"
 "Assets/Scripts/quit.cs"
 "Assets/Scripts/ShootLaser.cs"
 "Assets/Scripts/SwayCamera.cs"

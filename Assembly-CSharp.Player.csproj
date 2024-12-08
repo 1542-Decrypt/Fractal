@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\Fizzler_logic.cs" />
     <Compile Include="Assets\Scripts\Nodes\on_start_node.cs" />
     <Compile Include="Assets\Scripts\LinkageHelper.cs" />
+    <Compile Include="Assets\Scripts\Pickable.cs" />
     <Compile Include="Assets\Scripts\Nodes\relay_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\title_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\load_scene_node.cs" />
+    <Compile Include="Assets\Scripts\Pickup_system.cs" />
     <Compile Include="Assets\Scripts\Nodes\anim_node.cs" />
     <Compile Include="Assets\Scripts\MiscStuff.cs" />
     <Compile Include="Assets\Scripts\Interaction.cs" />

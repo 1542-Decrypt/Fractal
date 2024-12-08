@@ -7,7 +7,7 @@ public class LaserDisabler : MonoBehaviour
     [SerializeField]LaserGunLogic Gun;
     private void Start()
     {
-        Gun = FindObjectOfType<LaserGunLogic>();
+        Gun = FindAnyObjectByType<LaserGunLogic>();
     }
     public void Disable()
     {
