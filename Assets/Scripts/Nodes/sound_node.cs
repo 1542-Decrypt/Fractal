@@ -38,6 +38,12 @@ public class sound_node : MonoBehaviour
         AudiatedObject.clip = clip;
         AudiatedObject.Play();
         //Preventing issues with looped sounds (yes, moving elevator, thats about you)
+        if (soundscape_manager.soundscapes[SoundID].Modular)
+        {
+            int RandSound = Random.Range(0, soundscape_manager.soundscapes[SoundID].ExtraClips.Length);
+            AudiatedObject.clip = soundscape_manager.soundscapes[SoundID].ExtraClips[RandSound];
+            AudiatedObject.Play();
+        }
         if (soundscape_manager.soundscapes[SoundID].advanced == false)
         {
             return;

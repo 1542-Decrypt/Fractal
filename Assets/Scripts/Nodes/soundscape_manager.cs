@@ -20,6 +20,8 @@ public class soundscape_manager : MonoBehaviour
         [Range(0f, 1f)]
         public float volume;
         public bool Loop;
+        public bool Modular;
+        public AudioClip[] ExtraClips;
     }
     public void Awake()
     {

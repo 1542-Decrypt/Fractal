@@ -10,6 +10,8 @@ TagManager:
   - lockedNot
   - Mirror
   - Reciever
+  - Physics
+  - Cubefix
   layers:
   - Default
   - TransparentFX
