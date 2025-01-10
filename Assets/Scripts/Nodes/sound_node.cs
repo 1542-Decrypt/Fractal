@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using TMPro;
+using System;
 
 // im SUPER proud of this one as well as the whole soundscape system.
 public class sound_node : MonoBehaviour
@@ -22,7 +23,13 @@ public class sound_node : MonoBehaviour
     }
     async public void PlayAudio(int SoundID)
     {
-        Loop = soundscape_manager.soundscapes[SoundID].Loop;
+        try
+        {
+            Loop = soundscape_manager.soundscapes[SoundID].Loop;
+        }
+        catch (Exception e) {
+            print(e + "happened for some reason ig");
+        }
         //Default hold time. + Checking if sound should be looped or not.
         float SoundLength = 1000;
         clip = soundscape_manager.soundscapes[SoundID].sound;
@@ -40,7 +47,7 @@ public class sound_node : MonoBehaviour
         //Preventing issues with looped sounds (yes, moving elevator, thats about you)
         if (soundscape_manager.soundscapes[SoundID].Modular)
         {
-            int RandSound = Random.Range(0, soundscape_manager.soundscapes[SoundID].ExtraClips.Length);
+            int RandSound = UnityEngine.Random.Range(0, soundscape_manager.soundscapes[SoundID].ExtraClips.Length);
             AudiatedObject.clip = soundscape_manager.soundscapes[SoundID].ExtraClips[RandSound];
             AudiatedObject.Play();
         }
@@ -64,7 +71,14 @@ public class sound_node : MonoBehaviour
         newtext.GetComponent<Animation>().Play("ShowText");
         //4000 (+1000 default) is the default 5 second subtitle time.
         await Task.Delay((int)SoundLength + 4000);
-        newtext.GetComponent<Animation>().Play("HideText");
+        try
+        {
+            newtext.GetComponent<Animation>().Play("HideText");
+        }
+        catch
+        {
+            return;
+        }
         //Checking if this is the last text in the chain to remove background with it
         if (subtitle_handler.texts.Count <= 1)
             subtitle_object.GetComponent<Animation>().Play("HideSubt");

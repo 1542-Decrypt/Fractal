@@ -10,9 +10,10 @@ public class Pickup_system : MonoBehaviour
     [SerializeField] LaserGunLogic gun;
     [SerializeField] CharacterController Character;
     [SerializeField] sound_node SoundMaster;
+    [SerializeField] int NoInteractSndID = 19;
 
     Rigidbody grabbedRB;
-    GameObject grabbedOBJ;
+    internal GameObject grabbedOBJ;
     Transform Cached_pos;
 
     private void Awake()
@@ -24,25 +25,24 @@ public class Pickup_system : MonoBehaviour
         //objectHolder.transform.position = objectHolder.transform.position + cam.transform.forward * Input.GetAxis("Mouse ScrollWheel") * scrollSpeed * Time.deltaTime;
         if (grabbedOBJ)
         {
-            //grabbedRB.linearVelocity = (objectHolder.transform.position - grabbedRB.transform.position);
-            //grabbedRB.MovePosition(Vector3.Lerp(grabbedRB.position, objectHolder.transform.position, Time.deltaTime * lerpSpeed));
-            //grabbedRB.MoveRotation(Quaternion.Lerp(grabbedRB.rotation, objectHolder.transform.rotation, Time.deltaTime * lerpSpeed));
-            MoveObj();
-            RaycastHit hit;
-            if (Physics.Raycast(PointRay.HoldRay, out hit))
+            RaycastHit[] hits = Physics.RaycastAll(PointRay.HoldRay, 1f);
+            foreach (RaycastHit hit in hits)
             {
+                print(hit.transform.name);
                 if (hit.transform.gameObject.CompareTag("Cubefix"))
                 {
-                    print("HIT!");
+                    print("drop the cube");
                     Ungrab();
                 }
             }
+            MoveObj();
             if (Input.GetMouseButton(0))
             {
                 objectHolder.transform.Rotate(0f, 0f, 3f, Space.Self);
             }
             if (Input.GetMouseButton(1))
                 objectHolder.transform.Rotate(0f, 0f, -3f, Space.Self);
+
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -60,7 +60,7 @@ public class Pickup_system : MonoBehaviour
                         if (hit.transform.gameObject.GetComponent<CubeCollisionSound>().IsInteractable)
                             Grab(hit.transform.gameObject);
                         else
-                            SoundMaster.PlayAudio(26);
+                            SoundMaster.PlayAudio(NoInteractSndID);
                 }
             }
         }
@@ -74,7 +74,7 @@ public class Pickup_system : MonoBehaviour
             grabbedRB.AddForce(moveDirection * pickupForce);
         }
     }
-    void Ungrab()
+    public void Ungrab()
     {
         //grabbedRB.isKinematic = false;
         grabbedRB.useGravity = true;

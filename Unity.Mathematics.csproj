@@ -87,8 +87,8 @@
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\affine_transform.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\int2x4.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\int3x4.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\random.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\float3x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\random.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\Noise\psrdnoise2D.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\rigid_transform.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics\Unity.Mathematics\Noise\classicnoise4D.cs" />

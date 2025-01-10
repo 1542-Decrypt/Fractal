@@ -192,8 +192,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\GUIFramework\GUIAction.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\BuildProcessors\URPPreprocessBuild.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Overrides\LiftGammaGainEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\Shadows\ShadowCaster2DShapeTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\CompositeShadowCaster2DEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\Shadows\ShadowCaster2DShapeTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\UniversalSpeedTree8MaterialUpgrader.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\Converter\URP2DConverterUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Camera\UniversalRenderPipelineCameraEditor.cs" />

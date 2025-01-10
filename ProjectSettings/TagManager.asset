@@ -12,6 +12,7 @@ TagManager:
   - Reciever
   - Physics
   - Cubefix
+  - StopCube
   layers:
   - Default
   - TransparentFX
