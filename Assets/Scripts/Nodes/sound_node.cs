@@ -6,12 +6,18 @@ using System;
 // im SUPER proud of this one as well as the whole soundscape system.
 public class sound_node : MonoBehaviour
 {
+    public bool DoNotPlay;
     [Tooltip("The object that will emit sound. Will be set automatically to this objects parent if not set at first.")]
     public AudioSource AudiatedObject;
     private GameObject subtitle_object;
     bool Loop;
     AudioClip clip;
     public GameObject TextPrefab;
+
+    private bool isPaused = false;
+    private bool isWaitingToPlay = false;
+    private float DelayTimeGlobal;
+    private bool delayPaused = false;
     public void Awake()
     {
         //Checking if sound node is a child to set audiated object to parent, bc I dont want to do it manually.
@@ -23,6 +29,10 @@ public class sound_node : MonoBehaviour
     }
     async public void PlayAudio(int SoundID)
     {
+        if (DoNotPlay)
+        {
+            return;
+        }
         try
         {
             Loop = soundscape_manager.soundscapes[SoundID].Loop;
@@ -95,6 +105,10 @@ public class sound_node : MonoBehaviour
         AudiatedObject.loop = false;
         AudiatedObject.Stop();
     }
+    public void Disable()
+    {
+        DoNotPlay = true;
+    }
     void SetColorNoAlpha(int SoundID, TextMeshProUGUI text)
     {
         //Ignoring alpha to not fuck stuff up
@@ -104,9 +118,52 @@ public class sound_node : MonoBehaviour
         col.b = soundscape_manager.soundscapes[SoundID].color.b;
         text.color = col;
     }
-    async public void PlayAudioDelay(int SoundID, int DelayTime)
+    public void PlayAudioDelay(int SoundID, int DelayTime)
     {
-        await Task.Delay(DelayTime);
-        PlayAudio(SoundID);
+        if (!isPaused)
+        {
+            DelayTimeGlobal = DelayTime;
+            isWaitingToPlay = true;
+            if (!isWaitingToPlay)
+                PlayAudio(SoundID);
+        }
+    }
+    public void PauseAudio()
+    {
+        if (AudiatedObject.isPlaying)
+        {
+            AudiatedObject.Pause();
+            isPaused = true;
+        }
+        if (isWaitingToPlay)
+        {
+            delayPaused = true;
+        }
+    }
+    public void ContinueAudio()
+    {
+        if (isPaused)
+        {
+            AudiatedObject.Play();
+        }
+        if (delayPaused)
+        {
+            delayPaused = false;
+        }
+    }
+    private void Update()
+    {
+        if (isWaitingToPlay && delayPaused != true)
+        {
+            float ContDelayTime = DelayTimeGlobal;
+            if (ContDelayTime > 0)
+            {
+                ContDelayTime -= Time.deltaTime;
+            }
+            else
+            {
+                isWaitingToPlay = false;
+            }
+        }
     }
 }

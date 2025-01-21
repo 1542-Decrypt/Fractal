@@ -6,6 +6,7 @@ public class CubeCollisionSound : MonoBehaviour
     internal bool IsInteractable = true;
     public int HitSoundID;
     Pickup_system Pickup;
+    public bool isCube;
     private void Start()
     {
         Pickup = GameObject.FindAnyObjectByType<Pickup_system>().GetComponent<Pickup_system>();

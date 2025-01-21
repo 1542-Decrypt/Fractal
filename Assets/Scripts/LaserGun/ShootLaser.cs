@@ -24,7 +24,14 @@ public class ShootLaser : MonoBehaviour
         }
         else
         {
-            crosshair = GameObject.Find("CrossHalfPrime").GetComponent<Image>();
+            try
+            {
+                crosshair = GameObject.Find("CrossHalfPrime").GetComponent<Image>();
+            }
+            catch
+            {
+                print("stfu");
+            }
         }
     }
     public void CastLaser(Transform emitter)

@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class title_node : MonoBehaviour
 {
+    public bool DoNotPlay;
     enum ShowType { WordByWord, FadeInOut }
     [SerializeField] ShowType ShowingMethod;
     public float FadeinTime, HoldTime, FadeoutTime;
@@ -19,9 +20,17 @@ public class title_node : MonoBehaviour
     Mesh mesh;
     [SerializeField] private int RolloverCharacterSpread = 1;
 
-
+    public void Disable()
+    {
+        DoNotPlay = true;
+    }
     public void ShowText()
     {
+        if (DoNotPlay)
+        {
+            m_TextComponent.color = new Color(m_TextComponent.color.r, m_TextComponent.color.g, m_TextComponent.color.b, 0f);
+            return;
+        }
         if (ShowingMethod == ShowType.WordByWord) {
             StartCoroutine(LetterByLetter());
         }

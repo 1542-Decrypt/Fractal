@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class fade_node : MonoBehaviour
 {
+    public bool DoNotPlay;
     enum FadeType { In, Out }
     [SerializeField] FadeType FadeTp;
     public float FadeModifier;
@@ -45,6 +46,14 @@ public class fade_node : MonoBehaviour
     }
     public void OnTrigger()
     {
+        if (DoNotPlay)
+        {
+            return;
+        }
         started = true;
+    }
+    public void Disable()
+    {
+        DoNotPlay = true;
     }
 }

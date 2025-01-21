@@ -8,7 +8,7 @@ public class Trigger_block : MonoBehaviour
     enum TriggerType { Once, Multiple }
     [SerializeField] TriggerType TrigType;
     public UnityEvent Output_OnTrigger;
-    bool Fired = false;
+    public bool Fired = false;
 
     private void Start()
     {

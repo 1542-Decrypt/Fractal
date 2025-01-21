@@ -76,19 +76,25 @@
     <Compile Include="Assets\Scripts\CharacterLogic\CheckGround.cs" />
     <Compile Include="Assets\Scripts\GlassController.cs" />
     <Compile Include="Assets\Scripts\tips.cs" />
+    <Compile Include="Assets\Scripts\Nodes\Save_en_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\DebugCheck.cs" />
     <Compile Include="Assets\Scripts\CubeLogic\Pickup_system.cs" />
     <Compile Include="Assets\Scripts\Nodes\button_node.cs" />
     <Compile Include="Assets\Scripts\Keycodes.cs" />
     <Compile Include="Assets\Scripts\CubeLogic\CubeCollisionSound.cs" />
+    <Compile Include="Assets\Scripts\LevelStageHelper.cs" />
     <Compile Include="Assets\Scripts\Nodes\drop_node.cs" />
     <Compile Include="Assets\Scripts\LaserGun\LaserBeam.cs" />
+    <Compile Include="Assets\Scripts\SaveSlotHandler.cs" />
+    <Compile Include="Assets\Scripts\Nodes\button_node_helper.cs" />
     <Compile Include="Assets\Scripts\DoorMaster.cs" />
     <Compile Include="Assets\Scripts\LaserGun\ShootLaser.cs" />
     <Compile Include="Assets\Scripts\LaserGun\Interaction.cs" />
     <Compile Include="Assets\Scripts\Nodes\subtitle_handler.cs" />
     <Compile Include="Assets\Scripts\Nodes\soundscape_manager.cs" />
     <Compile Include="Assets\Scripts\quit.cs" />
+    <Compile Include="Assets\Scripts\SavingSystem.cs" />
+    <Compile Include="Assets\Scripts\PropObject.cs" />
     <Compile Include="Assets\Scripts\Nodes\LaserDisabler.cs" />
     <Compile Include="Assets\Scripts\Nodes\door_node.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\CharacterControl.cs" />
@@ -100,14 +106,17 @@
     <Compile Include="Assets\Scripts\CharacterLogic\FootSteps.cs" />
     <Compile Include="Assets\Scripts\Nodes\train_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\AND_block.cs" />
+    <Compile Include="Assets\Scripts\Nodes\StageSwitch.cs" />
     <Compile Include="Assets\Scripts\Nodes\sound_node.cs" />
     <Compile Include="Assets\Scripts\LaserReciever.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Helpers.txt" />
     <None Include="Assets\Shaders\flow.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />

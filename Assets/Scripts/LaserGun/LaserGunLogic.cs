@@ -5,15 +5,17 @@ public class LaserGunLogic : MonoBehaviour
 {
     public bool Mono;
     internal bool EnabledLaser = true;
-    bool Fired = false;
+    internal bool Fired = false;
     bool LaserExists = false;
-    bool IsSet = false;
+    internal bool IsSet = false;
+    internal bool isGiven;
+    internal bool ForceGive = false;
     Transform bufferPosition;
     [SerializeField] float sizeMod;
     [SerializeField] Vector3 position, newScale;
     [SerializeField] string GiveAnimName, ShootAnimName;
     [SerializeField] Transform dummyCaster, dummyCaster2;
-    ShootLaser castScript, castScript2;
+    internal ShootLaser castScript, castScript2;
     [SerializeField] Transform hand, handObject, handObject2;
     [SerializeField] ParticleSystem shootPart;
     [SerializeField] Animation Cam;
@@ -30,10 +32,11 @@ public class LaserGunLogic : MonoBehaviour
             GiveGun();
         }
     }
-    void GiveGun()
+    public void GiveGun()
     {
-        if (Fired == false)
+        if (Fired == false || ForceGive == true)
         {
+            isGiven = true;
             base.transform.SetParent(hand);
             base.transform.position = position;
             base.transform.localScale = newScale;
@@ -126,6 +129,10 @@ public class LaserGunLogic : MonoBehaviour
         }
         if (IsSet)
         {
+            if (LaserExists != true)
+            {
+                LaserExists = true;
+            }
             castScript.UpdateLaserCollision();
         }
     }

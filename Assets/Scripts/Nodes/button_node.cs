@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 public class button_node : MonoBehaviour
 {
-    bool Active = false;
-    bool Open = false;
+    internal bool Active = false;
+    private bool Open = false;
     public KeyCode Interact;
     public Animation AnimPlayer;
     public sound_node SoundPlayer;
@@ -14,20 +14,10 @@ public class button_node : MonoBehaviour
     [Range(-1f, 25f)]
     [Tooltip("Negative values will make button not press back")]
     [SerializeField] float pressTime = 0.5f;
-    public UnityEvent Output_OnTrigger;
+    public UnityEvent Output_OnEnable;
+    public UnityEvent Output_OnDisable;
 
     [SerializeField] internal bool isPressed = false;
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Active = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        Active = false;
-    }
     async private void Update()
     {
         if (Active)
@@ -65,7 +55,7 @@ public class button_node : MonoBehaviour
         isPressed = true;
         AnimPlayer.Play("button_press");
         SoundPlayer.PlayAudio(pressSoundID);
-        Output_OnTrigger.Invoke();
+        Output_OnEnable.Invoke();
     }
     async void Unpress()
     {
@@ -73,5 +63,10 @@ public class button_node : MonoBehaviour
         if (Toggleable == false)
             await Task.Delay(925);
         isPressed = false;
+        if (Output_OnDisable != null)
+        {
+            print("Invoked");
+            Output_OnDisable.Invoke();
+        }
     }
 }

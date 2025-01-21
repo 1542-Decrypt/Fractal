@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class train_node : MonoBehaviour
 {
+    public bool DoNotPlay;
     public UnityEvent Output_OnStart;
     public UnityEvent Output_OnArrive;
     public Transform StartPoint, EndPoint;
@@ -13,6 +14,10 @@ public class train_node : MonoBehaviour
     private void Start()
     {
         DynamicObject.position = StartPoint.position;
+    }
+    public void Disable()
+    {
+        DoNotPlay = true;
     }
     private void Update()
     {
@@ -32,6 +37,10 @@ public class train_node : MonoBehaviour
     }
     public void StartMovingTrain()
     {
+        if (DoNotPlay)
+        {
+            return;
+        }
         Started = true;
         Output_OnStart.Invoke();
     }

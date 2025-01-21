@@ -9,7 +9,7 @@ public class drop_node : MonoBehaviour
     private sound_node soundMaster;
     private Transform spawndummy;
     private bool open = false;
-    private GameObject cube;
+    internal GameObject cube;
     private void Start()
     {
         spawndummy = transform.Find("spawndummy").transform;

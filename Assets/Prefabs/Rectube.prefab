@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitSoundID: 20
+  isCube: 1
 --- !u!82 &6285964251295982831
 AudioSource:
   m_ObjectHideFlags: 0

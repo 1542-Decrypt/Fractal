@@ -6,7 +6,7 @@ public class Pickup_system : MonoBehaviour
 
     [SerializeField] Camera cam;
     [SerializeField] float maxGrabDistance = 10f, throwForce = 20f, pickupForce = 150f, scrollSpeed=500f;
-    [SerializeField] Transform objectHolder;
+    [SerializeField] public Transform objectHolder;
     [SerializeField] LaserGunLogic gun;
     [SerializeField] CharacterController Character;
     [SerializeField] sound_node SoundMaster;
@@ -102,7 +102,7 @@ public class Pickup_system : MonoBehaviour
         grabbedRB = null;
         objectHolder.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
-    void Grab(GameObject pickedObj)
+    public void Grab(GameObject pickedObj)
     {
         if (pickedObj.GetComponent<Rigidbody>())
         {
