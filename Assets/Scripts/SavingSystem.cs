@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Linq;
 public class SavingSystem : MonoBehaviour
 {
     public GameObject SaveGUI;
@@ -117,18 +118,53 @@ public class SavingSystem : MonoBehaviour
         {
             currentSave += 1;
             SaveType = "QUICK SAVE";
-            Save(player, laser, currentSave, coordinates, SaveGUI);
+            Save(player, laser, currentSave, coordinates, SaveGUI, false);
+        }
+        if (Input.GetKeyDown(KeyCode.F7))
+        {
+            Load(currentSave);
         }
     }
-    public static void Save(CharacterControl player, LaserGunLogic gun, int SaveSlot, ShootLaser coords, GameObject SGUI)
+    public void SaveTrigger(int SaveID)
     {
+        bool Overwrite;
+        if (SaveID > 0)
+        {
+            Overwrite = true;
+        }
+        else
+        {
+            Overwrite = false;
+            currentSave += 1;
+            SaveID = currentSave;
+        }
+        Debug.LogWarning("Save file being Overwritten is " + Overwrite + ", and its ID is currently " + SaveID);
+        SaveType = "QUICK SAVE";
+        Save(player, laser, SaveID, coordinates, SaveGUI, Overwrite);
+    }
+    public void Delete(int SaveSlot)
+    {
+        currentSave = SaveSlot-1;
+        File.Delete(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav");
+    }
+    public static void Save(CharacterControl player, LaserGunLogic gun, int SaveSlot, ShootLaser coords, GameObject SGUI, bool Overwrite)
+    {
+        Debug.LogWarning("Current Slot of saving is " + SaveSlot);
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream stream = new FileStream(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav", FileMode.Create);
-        GameData data = new GameData(player, gun, coords);
+        if (Overwrite == false)
+        {
+            while (File.Exists(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav"))
+            {
+                SaveSlot++;
+            }
+            currentSave = SaveSlot;
+        }
+        FileStream stream = new FileStream(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav", FileMode.Create, FileAccess.Write);
+        GameData data = new GameData(player, gun, coords, SaveSlot);
         bf.Serialize(stream, data);
         stream.Close();
         SGUI.GetComponent<Animation>().Play();
-        Debug.Log("Saved " + "game" + SaveSlot.ToString() + ".sav" + " to" + Application.persistentDataPath + "/saves");
+        Debug.LogWarning("Saved " + "game" + SaveSlot.ToString() + ".sav" + " to" + Application.persistentDataPath + "/saves");
     }
     public static void Load(int SaveSlot)
     {
@@ -141,6 +177,10 @@ public class SavingSystem : MonoBehaviour
             GameData data = bf.Deserialize(stream) as GameData;
             stream.Close();
             SceneManager.LoadScene(data.SceneName);
+        }
+        else
+        {
+            Debug.LogError("Save file not found!");
         }
     }
 }
@@ -161,7 +201,7 @@ public class GameData
     //-
     public float[] PlayerPosition = { 0f, 0f, 0f };
     //-
-    public float[] PlayerRotation = { 0f, 0f, 0f, 0f};
+    public float[] PlayerRotation = { 0f, 0f, 0f, 0f };
     //-
     public List<float> CubePositionX = new List<float>();
     public List<float> CubePositionY = new List<float>();
@@ -188,13 +228,14 @@ public class GameData
     public List<float> RotPanelY = new List<float>();
     public List<float> RotPanelZ = new List<float>();
     public List<float> RotPanelW = new List<float>();
-    public GameData(CharacterControl player, LaserGunLogic gun, ShootLaser coords)
+
+    public GameData(CharacterControl player, LaserGunLogic gun, ShootLaser coords, int id)
     {
         Stage = LevelStageHelper.ChamberStage;
         Date = DateTime.Now.ToString();
         SaveType = SavingSystem.SaveType;
         Debug.Log(player.gameObject.name);
-        SaveID = SavingSystem.currentSave;
+        SaveID = id;
         SceneName = SceneManager.GetActiveScene().name;
         PlayerPosition[0] = player.gameObject.transform.position.x;
         PlayerPosition[1] = player.gameObject.transform.position.y;
@@ -293,4 +334,5 @@ public class GameData
             ifTriggersFired.Add(trigger.Fired);
         }
     }
+
 }

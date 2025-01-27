@@ -468,6 +468,8 @@
 "Assets/Scripts/Nodes/title_node.cs"
 "Assets/Scripts/Nodes/train_node.cs"
 "Assets/Scripts/Nodes/wait_node.cs"
+"Assets/Scripts/Pause additions/Settings.cs"
+"Assets/Scripts/Pause additions/SliderHelper.cs"
 "Assets/Scripts/Pause.cs"
 "Assets/Scripts/PropObject.cs"
 "Assets/Scripts/quit.cs"

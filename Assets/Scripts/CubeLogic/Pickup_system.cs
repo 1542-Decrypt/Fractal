@@ -36,11 +36,11 @@ public class Pickup_system : MonoBehaviour
                 }
             }
             MoveObj();
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && !Pause.Paused)
             {
                 objectHolder.transform.Rotate(0f, 0f, 3f, Space.Self);
             }
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(1) && !Pause.Paused)
                 objectHolder.transform.Rotate(0f, 0f, -3f, Space.Self);
 
         }

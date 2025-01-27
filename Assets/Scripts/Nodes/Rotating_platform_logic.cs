@@ -34,7 +34,7 @@ public class Rotating_platform_logic : MonoBehaviour
         }
         else
         {
-            if (Started)
+            if (Started && !Pause.Paused)
             {
                 print("Turning is"+Started);
                 float Angle;

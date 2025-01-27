@@ -105,11 +105,13 @@
     <Compile Include="Assets\Scripts\Nodes\wait_node.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\FootSteps.cs" />
     <Compile Include="Assets\Scripts\Nodes\train_node.cs" />
+    <Compile Include="Assets\Scripts\Pause additions\SliderHelper.cs" />
     <Compile Include="Assets\Scripts\Nodes\AND_block.cs" />
     <Compile Include="Assets\Scripts\Nodes\StageSwitch.cs" />
     <Compile Include="Assets\Scripts\Nodes\sound_node.cs" />
     <Compile Include="Assets\Scripts\LaserReciever.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
+    <Compile Include="Assets\Scripts\Pause additions\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

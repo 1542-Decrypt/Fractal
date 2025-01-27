@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class soundscape_manager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class soundscape_manager : MonoBehaviour
     [System.Serializable]
     public struct Soundscape
     {
+        public AudioMixerGroup group;
         [Tooltip("What sound will be played")]
         public AudioClip sound;
         [Tooltip("Is only shown by advanced subtitles?")]
