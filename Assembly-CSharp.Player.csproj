@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Nodes\on_start_node.cs" />
     <Compile Include="Assets\Scripts\LinkageHelper.cs" />
     <Compile Include="Assets\Scripts\Nodes\Rotating_platform_logic.cs" />
+    <Compile Include="Assets\Scripts\Nodes\dev_comment.cs" />
     <Compile Include="Assets\Scripts\Nodes\relay_node.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\CeilingCheck.cs" />
     <Compile Include="Assets\Scripts\Nodes\title_node.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\DoorMaster.cs" />
     <Compile Include="Assets\Scripts\LaserGun\ShootLaser.cs" />
     <Compile Include="Assets\Scripts\LaserGun\Interaction.cs" />
+    <Compile Include="Assets\Scripts\Nodes\dev_comment_helper.cs" />
     <Compile Include="Assets\Scripts\Nodes\subtitle_handler.cs" />
     <Compile Include="Assets\Scripts\Nodes\soundscape_manager.cs" />
     <Compile Include="Assets\Scripts\quit.cs" />

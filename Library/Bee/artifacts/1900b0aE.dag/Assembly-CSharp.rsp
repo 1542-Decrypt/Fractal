@@ -452,6 +452,8 @@
 "Assets/Scripts/Nodes/button_node.cs"
 "Assets/Scripts/Nodes/button_node_helper.cs"
 "Assets/Scripts/Nodes/DebugCheck.cs"
+"Assets/Scripts/Nodes/dev_comment.cs"
+"Assets/Scripts/Nodes/dev_comment_helper.cs"
 "Assets/Scripts/Nodes/door_node.cs"
 "Assets/Scripts/Nodes/drop_node.cs"
 "Assets/Scripts/Nodes/fade_node.cs"

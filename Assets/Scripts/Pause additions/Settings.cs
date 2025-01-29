@@ -18,6 +18,7 @@ public class Settings : MonoBehaviour
     public PostProcessVolume volume;
     public CharacterControl character;
     public GameObject CrosshairObj, RenderText;
+    private bool DevComment = true;
     private bool Crosshair = true;
     private bool ReversedMouse = false;
     private bool Filter = true;
@@ -66,7 +67,7 @@ public class Settings : MonoBehaviour
     }
     public void Apply()
     {
-        SettingsPrefs Prefs = new SettingsPrefs(Crosshair, ReversedMouse, Filter, AO, ChromAbbr, Bloom, Vignette, Grain, MuteWhenClosed, Sensivity, MasterVolume, SoundVolume, MusicVolume, Quality, DisplayMode, Captioning, Resolution);
+        SettingsPrefs Prefs = new SettingsPrefs(Crosshair, ReversedMouse, Filter, AO, ChromAbbr, Bloom, Vignette, Grain, MuteWhenClosed, Sensivity, MasterVolume, SoundVolume, MusicVolume, Quality, DisplayMode, Captioning, Resolution, DevComment);
         string settings = JsonUtility.ToJson(Prefs, true);
         File.WriteAllText(Application.persistentDataPath + "/options.json", settings);
         LoadSettings();
@@ -102,7 +103,7 @@ public class Settings : MonoBehaviour
         Lists[1].value = data.DisplayMode;
         //Lists[2].value = data.Resolution;
         Lists[3].value = data.Captioning;
-        //Toggles[0].isOn = data.DevComment;
+        Toggles[0].isOn = data.DevComment;
         Toggles[1].isOn = data.Crosshair;
         Toggles[2].isOn = data.ReversedMouse;
         Toggles[3].isOn = data.Filter;
@@ -120,6 +121,11 @@ public class Settings : MonoBehaviour
         }
         else
         {
+            foreach (dev_comment DC in GameObject.FindObjectsByType<dev_comment>(FindObjectsSortMode.None))
+            {
+                print("Name is " + DC.gameObject.name);
+                DC.gameObject.SetActive(data.DevComment);
+            }
             CrosshairObj.SetActive(data.Crosshair);
             ao.active = data.AO;
             bloom.active = data.Bloom;
@@ -177,7 +183,11 @@ public class Settings : MonoBehaviour
             MWC = data.MuteWhenClosed;
         }
     }
-        public void SetBool1(bool value)
+    public void SetBool0(bool value)
+    {
+        DevComment = value;
+    }
+    public void SetBool1(bool value)
     {
         Crosshair = value;
     }
@@ -252,6 +262,7 @@ public class SettingsPrefs
 {
     public string appVersion;
 
+    public bool DevComment;
     public bool Crosshair;
     public bool ReversedMouse;
     public bool Filter;
@@ -272,7 +283,7 @@ public class SettingsPrefs
     public int Captioning;
     public int Resolution;
 
-    public SettingsPrefs(bool Crshr, bool RevM, bool Fltr, bool AmbO, bool ChrAbbr, bool Blom, bool Grn, bool Vign, bool MWC, float Snsv, float MastVol, float MusVol, float SndVol, int Qual, int DM, int Capt, int Res)
+    public SettingsPrefs(bool Crshr, bool RevM, bool Fltr, bool AmbO, bool ChrAbbr, bool Blom, bool Grn, bool Vign, bool MWC, float Snsv, float MastVol, float MusVol, float SndVol, int Qual, int DM, int Capt, int Res, bool devComment)
     {
         appVersion = Application.version;
         bool[] Bools = { Crshr, RevM, Fltr, AmbO, ChrAbbr, Blom, Grn, Vign, MWC };
@@ -295,5 +306,6 @@ public class SettingsPrefs
         DisplayMode = Ints[1];
         Captioning = Ints[2];
         Resolution = Ints[3];
+        DevComment = devComment;
     }
 }

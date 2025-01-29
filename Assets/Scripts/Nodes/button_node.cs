@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 public class button_node : MonoBehaviour
 {
     internal bool Active = false;
-    private bool Open = false;
     public KeyCode Interact;
     public Animation AnimPlayer;
     public sound_node SoundPlayer;
@@ -17,6 +16,8 @@ public class button_node : MonoBehaviour
     public UnityEvent Output_OnEnable;
     public UnityEvent Output_OnDisable;
 
+    private int AnimState;
+
     [SerializeField] internal bool isPressed = false;
     async private void Update()
     {
@@ -26,7 +27,7 @@ public class button_node : MonoBehaviour
             if (Input.GetKeyDown(Interact) && Physics.Raycast(MiscStuff.Camray, out raycastHit, 2f) && raycastHit.transform.gameObject == gameObject)
             {
                 Press();
-                if (pressTime >= 0 )
+                if (pressTime >= 0)
                     await Task.Delay(Mathf.RoundToInt(pressTime * 1000));
                 else
                 {
@@ -35,6 +36,12 @@ public class button_node : MonoBehaviour
                 if (Toggleable == false)
                     Unpress();
             }
+        }
+        if (AnimState == 0 && isPressed)
+        {
+            AnimPlayer.Play("button_press");
+            AnimState = 1;
+            Output_OnEnable.Invoke();
         }
     }
     void Press()
@@ -54,15 +61,17 @@ public class button_node : MonoBehaviour
         }
         isPressed = true;
         AnimPlayer.Play("button_press");
+        AnimState = 1;
         SoundPlayer.PlayAudio(pressSoundID);
         Output_OnEnable.Invoke();
     }
     async void Unpress()
     {
+        isPressed = false;
         AnimPlayer.Play("button_unpress");
+        AnimState = 0;
         if (Toggleable == false)
             await Task.Delay(925);
-        isPressed = false;
         if (Output_OnDisable != null)
         {
             print("Invoked");

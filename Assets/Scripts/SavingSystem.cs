@@ -46,6 +46,10 @@ public class SavingSystem : MonoBehaviour
             GameData data = bf.Deserialize(stream) as GameData;
             stream.Close();
             helper.Check(data.Stage, true);
+            for (int i = 0; i < GameObject.FindObjectsByType<Trigger_block>(FindObjectsSortMode.InstanceID).Length; i++)
+            {
+                GameObject.FindObjectsByType<Trigger_block>(FindObjectsSortMode.InstanceID)[i].Fired = data.ifTriggersFired[i];
+            }
         }
     }
     private void Start()
@@ -87,9 +91,9 @@ public class SavingSystem : MonoBehaviour
                     }
                 }
             }
-            for (int i = 0; i < GameObject.FindObjectsByType<Trigger_block>(FindObjectsSortMode.InstanceID).Length; i++)
+            for (int i = 0; i < GameObject.FindObjectsByType<button_node>(FindObjectsSortMode.InstanceID).Length; i++)
             {
-                GameObject.FindObjectsByType<Trigger_block>(FindObjectsSortMode.InstanceID)[i].Fired = data.ifTriggersFired[i];
+                GameObject.FindObjectsByType<button_node>(FindObjectsSortMode.InstanceID)[i].isPressed = data.ifButtonsPressed[i];
             }
             for (int i = 0; i < GameObject.FindObjectsByType<Rotating_platform_logic>(FindObjectsSortMode.InstanceID).Length; i++)
             {
@@ -199,6 +203,8 @@ public class GameData
     //-
     public List<bool> ifTriggersFired = new List<bool>();
     //-
+    public List<bool> ifButtonsPressed = new List<bool>();
+    //-
     public float[] PlayerPosition = { 0f, 0f, 0f };
     //-
     public float[] PlayerRotation = { 0f, 0f, 0f, 0f };
@@ -271,6 +277,13 @@ public class GameData
                 RotPanelY.Add(rotplat.gameObject.transform.rotation.y);
                 RotPanelZ.Add(rotplat.gameObject.transform.rotation.z);
                 RotPanelW.Add(rotplat.gameObject.transform.rotation.w);
+            }
+        }
+        if (GameObject.FindObjectsByType<button_node>(FindObjectsSortMode.InstanceID).Length > 0)
+        {
+            foreach (button_node button in GameObject.FindObjectsByType<button_node>(FindObjectsSortMode.InstanceID))
+            {
+                ifButtonsPressed.Add(button.isPressed);
             }
         }
         if (GameObject.FindObjectsByType<drop_node>(FindObjectsSortMode.InstanceID).Length > 0)

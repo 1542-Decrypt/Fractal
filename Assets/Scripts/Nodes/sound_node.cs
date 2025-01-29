@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.Audio;
+using UnityEngine.Events;
 
 // im SUPER proud of this one as well as the whole soundscape system.
 public class sound_node : MonoBehaviour
@@ -14,6 +14,7 @@ public class sound_node : MonoBehaviour
     bool Loop;
     AudioClip clip;
     public GameObject TextPrefab;
+    public UnityEvent On_Sound_Finish;
 
     private bool isWaitingToPlay = false;
     private float DelayTimeGlobal;
@@ -37,7 +38,8 @@ public class sound_node : MonoBehaviour
         {
             Loop = soundscape_manager.soundscapes[SoundID].Loop;
         }
-        catch (Exception e) {
+        catch (Exception e)
+        {
             print(e + "happened for some reason ig");
         }
         //Default hold time. + Checking if sound should be looped or not.
@@ -54,6 +56,7 @@ public class sound_node : MonoBehaviour
         }
         AudiatedObject.volume = soundscape_manager.soundscapes[SoundID].volume;
         AudiatedObject.clip = clip;
+        SoundLength = AudiatedObject.clip.length * 1000;
         AudiatedObject.Play();
         //Preventing issues with looped sounds (yes, moving elevator, thats about you)
         if (soundscape_manager.soundscapes[SoundID].Modular)
@@ -62,6 +65,7 @@ public class sound_node : MonoBehaviour
             AudiatedObject.clip = soundscape_manager.soundscapes[SoundID].ExtraClips[RandSound];
             AudiatedObject.Play();
         }
+        WaitToFinish(Mathf.RoundToInt(SoundLength));
         if (Settings.Captions == 0 || soundscape_manager.soundscapes[SoundID].subtitles == false)
         {
             return;
@@ -102,6 +106,11 @@ public class sound_node : MonoBehaviour
             print(subtitle_handler.texts.Count);
             Destroy(newtext);
         }
+    }
+    async void WaitToFinish(int SoundLength)
+    {
+        await Task.Delay(SoundLength);
+        On_Sound_Finish.Invoke();
     }
     public void StopAudio()
     {

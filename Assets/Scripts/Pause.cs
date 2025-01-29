@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using System.Threading.Tasks;
 public class Pause : MonoBehaviour
 {
     public Button savebutton;
@@ -43,10 +44,8 @@ public class Pause : MonoBehaviour
   
         PauseUI.SetActive(true);
     }
-    public void ContinueGame()
+    async public void ContinueGame()
     {
-        if (!isGunDisabledByDef)
-            gun.EnabledLaser = true;
         Paused = false;
         fps.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,6 +56,9 @@ public class Pause : MonoBehaviour
             AudioListener.pause = false;
         }
         PauseUI.SetActive(false);
+        await Task.Delay(500);
+        if (!isGunDisabledByDef)
+            gun.EnabledLaser = true;
     }
     private void Update()
     {

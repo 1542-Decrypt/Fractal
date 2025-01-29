@@ -17,7 +17,6 @@ public class LaserBeam
     Color color;
     public List<Vector3> laserIndices = new List<Vector3>();
     List<Vector3> HitObjects = new List<Vector3>();
-    bool MustUpdate = false;
     public bool IsTriggerable;
     public int endID = 0;
     bool NeedToAdd = false;

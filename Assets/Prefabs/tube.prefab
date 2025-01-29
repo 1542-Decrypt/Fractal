@@ -535,7 +535,7 @@ Animation:
   m_GameObject: {fileID: 6715483019139709460}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 1104703945904300326, guid: e27356a406c3df54e897dc5189410e26, type: 3}
+  m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: dc31669f7fdef8a45b69c98c84ff6db5, type: 2}
   - {fileID: 7400000, guid: 043003c232061a14da0ff99a3bf56e0f, type: 2}
@@ -558,6 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7293186807074011981, guid: 807be571aaa0aa440a6a380257ae9996, type: 3}
   dropAtStart: 0
+  dissolveSpeed: 0.8
 --- !u!82 &3366547065549812284
 AudioSource:
   m_ObjectHideFlags: 0

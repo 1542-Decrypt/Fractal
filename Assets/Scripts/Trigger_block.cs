@@ -9,9 +9,14 @@ public class Trigger_block : MonoBehaviour
     [SerializeField] TriggerType TrigType;
     public UnityEvent Output_OnTrigger;
     public bool Fired = false;
+    public bool IgnoreSaveChanges = false;
 
     private void Start()
     {
+        if (IgnoreSaveChanges && Fired)
+        {
+            Fired = false;
+        }
         this.GetComponent<MeshRenderer>().enabled = false;
     }
     private void OnTriggerEnter(Collider other)

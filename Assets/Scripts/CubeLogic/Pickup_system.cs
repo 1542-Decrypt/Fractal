@@ -5,7 +5,7 @@ public class Pickup_system : MonoBehaviour
 {
 
     [SerializeField] Camera cam;
-    [SerializeField] float maxGrabDistance = 10f, throwForce = 20f, pickupForce = 150f, scrollSpeed=500f;
+    [SerializeField] float maxGrabDistance = 10f, pickupForce = 150f;
     [SerializeField] public Transform objectHolder;
     [SerializeField] LaserGunLogic gun;
     [SerializeField] CharacterController Character;
@@ -42,7 +42,10 @@ public class Pickup_system : MonoBehaviour
             }
             if (Input.GetMouseButton(1) && !Pause.Paused)
                 objectHolder.transform.Rotate(0f, 0f, -3f, Space.Self);
-
+            if (grabbedOBJ.GetComponent<CubeCollisionSound>().IsInteractable != true)
+            {
+                Ungrab();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
