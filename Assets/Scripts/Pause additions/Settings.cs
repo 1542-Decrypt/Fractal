@@ -62,7 +62,7 @@ public class Settings : MonoBehaviour
     {
         if (MWC && !Application.isFocused)
         {
-            base.GetComponent<Pause>().PauseGame();
+            GetComponent<Pause>().PauseGame();
         }
     }
     public void Apply()
@@ -121,7 +121,7 @@ public class Settings : MonoBehaviour
         }
         else
         {
-            foreach (dev_comment DC in GameObject.FindObjectsByType<dev_comment>(FindObjectsSortMode.None))
+            foreach (dev_comment DC in GameObject.FindObjectsByType<dev_comment>(FindObjectsInactive.Include, FindObjectsSortMode.None))
             {
                 print("Name is " + DC.gameObject.name);
                 DC.gameObject.SetActive(data.DevComment);

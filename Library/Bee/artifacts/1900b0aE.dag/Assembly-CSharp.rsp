@@ -127,6 +127,7 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
 -define:UNITY_POST_PROCESSING_STACK_V2
+-define:STEAMWORKS_NET
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/6000.0.27f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
@@ -370,6 +371,8 @@
 -r:"Library/PackageCache/com.unity.collections/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
 -r:"Library/PackageCache/com.unity.ext.nunit/net40/unity-custom/nunit.framework.dll"
 -r:"Library/PackageCache/com.unity.nuget.mono-cecil/Mono.Cecil.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/com.rlabrecque.steamworks.net.editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/com.rlabrecque.steamworks.net.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PPv2URPConverters.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.AdaptivePerformance.Editor.ref.dll"
@@ -447,6 +450,7 @@
 "Assets/Scripts/LaserReciever.cs"
 "Assets/Scripts/LevelStageHelper.cs"
 "Assets/Scripts/LinkageHelper.cs"
+"Assets/Scripts/Loading_Screen.cs"
 "Assets/Scripts/Nodes/AND_block.cs"
 "Assets/Scripts/Nodes/anim_node.cs"
 "Assets/Scripts/Nodes/button_node.cs"
@@ -457,6 +461,9 @@
 "Assets/Scripts/Nodes/door_node.cs"
 "Assets/Scripts/Nodes/drop_node.cs"
 "Assets/Scripts/Nodes/fade_node.cs"
+"Assets/Scripts/Nodes/FlipPanel.cs"
+"Assets/Scripts/Nodes/floor_button.cs"
+"Assets/Scripts/Nodes/floor_button_trigger.cs"
 "Assets/Scripts/Nodes/LaserDisabler.cs"
 "Assets/Scripts/Nodes/load_scene_node.cs"
 "Assets/Scripts/Nodes/on_start_node.cs"
@@ -477,9 +484,12 @@
 "Assets/Scripts/quit.cs"
 "Assets/Scripts/SaveSlotHandler.cs"
 "Assets/Scripts/SavingSystem.cs"
+"Assets/Scripts/Steamworks.NET/SteamManager.cs"
 "Assets/Scripts/TestInteraction.cs"
 "Assets/Scripts/tips.cs"
 "Assets/Scripts/Trigger_block.cs"
+"Assets/Scripts/WireLogic.cs"
+"Assets/Scripts/WiringManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

@@ -23,17 +23,22 @@ public class Pause : MonoBehaviour
     public static int SaveIndex;
     public static bool Paused;
     private bool isGunDisabledByDef;
+
+    private bool disabledGun = false;
     public void PauseGame()
     {
         if (SavingUI.activeSelf)
         {
             RefreshSaveFolder();
         }
-        isGunDisabledByDef = true;
+        if (!disabledGun)
+            isGunDisabledByDef = true;
         if (gun.EnabledLaser)
         {
             isGunDisabledByDef = false;
             gun.EnabledLaser = false;
+            disabledGun = true;
+            Debug.LogWarning(isGunDisabledByDef);
         }
         Paused = true;
         fps.enabled = false;
@@ -56,9 +61,15 @@ public class Pause : MonoBehaviour
             AudioListener.pause = false;
         }
         PauseUI.SetActive(false);
-        await Task.Delay(500);
+        await Task.Delay(250);
+        Debug.LogWarning(isGunDisabledByDef);
         if (!isGunDisabledByDef)
+        {
+            Debug.LogWarning("EnableGun");
+            isGunDisabledByDef = true;
+            disabledGun = false;
             gun.EnabledLaser = true;
+        }
     }
     private void Update()
     {
@@ -128,7 +139,7 @@ public class Pause : MonoBehaviour
         }
         else
         {
-            SavingSystem.Load(SaveIndex);
+            SaveSys.Load(SaveIndex);
         }
     }
     public void SaveGame(bool Accept)

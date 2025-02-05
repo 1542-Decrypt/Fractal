@@ -12,6 +12,8 @@ public class sound_node : MonoBehaviour
     public AudioSource AudiatedObject;
     private GameObject subtitle_object;
     bool Loop;
+    public bool PlayOnStart;
+    public int StartID;
     AudioClip clip;
     public GameObject TextPrefab;
     public UnityEvent On_Sound_Finish;
@@ -27,6 +29,13 @@ public class sound_node : MonoBehaviour
             AudiatedObject = base.transform.parent.gameObject.GetComponent<AudioSource>();
         }
         subtitle_object = GameObject.Find("SubtitleHelper");
+    }
+    private void Start()
+    {
+        if (PlayOnStart)
+        {
+            PlayAudio(StartID);
+        }
     }
     async public void PlayAudio(int SoundID)
     {
@@ -46,7 +55,7 @@ public class sound_node : MonoBehaviour
         float SoundLength = 1000;
         clip = soundscape_manager.soundscapes[SoundID].sound;
         AudiatedObject.outputAudioMixerGroup = soundscape_manager.soundscapes[SoundID].group;
-        if (Loop)
+        if (Loop && !soundscape_manager.soundscapes[SoundID].Modular)
         {
             AudiatedObject.loop = true;
         }
@@ -56,15 +65,13 @@ public class sound_node : MonoBehaviour
         }
         AudiatedObject.volume = soundscape_manager.soundscapes[SoundID].volume;
         AudiatedObject.clip = clip;
-        SoundLength = AudiatedObject.clip.length * 1000;
-        AudiatedObject.Play();
-        //Preventing issues with looped sounds (yes, moving elevator, thats about you)
         if (soundscape_manager.soundscapes[SoundID].Modular)
         {
             int RandSound = UnityEngine.Random.Range(0, soundscape_manager.soundscapes[SoundID].ExtraClips.Length);
             AudiatedObject.clip = soundscape_manager.soundscapes[SoundID].ExtraClips[RandSound];
-            AudiatedObject.Play();
         }
+        SoundLength = AudiatedObject.clip.length * 1000;
+        AudiatedObject.Play();
         WaitToFinish(Mathf.RoundToInt(SoundLength));
         if (Settings.Captions == 0 || soundscape_manager.soundscapes[SoundID].subtitles == false)
         {

@@ -59,13 +59,14 @@ public class drop_node : MonoBehaviour
     {
         if (dissolve)
         {
+            SavingSystem.isSavingEnabled = false;
             cube_obj.gameObject.GetComponent<MeshRenderer>().material.SetFloat("_Threshold", cube_obj.gameObject.GetComponent<MeshRenderer>().material.GetFloat("_Threshold") + Time.deltaTime);
-            Debug.LogWarning(cube_obj.gameObject.GetComponent<MeshRenderer>().material.GetFloat("_Threshold"));
             if (cube_obj.gameObject.GetComponent<MeshRenderer>().material.GetFloat("_Threshold") >= 1)
             {
                 Destroy(cube);
                 cube = buffer_cube;
                 dissolve = false;
+                SavingSystem.isSavingEnabled = true;
             }
         }
     }

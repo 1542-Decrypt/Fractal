@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeCollisionSound : MonoBehaviour
@@ -7,6 +8,7 @@ public class CubeCollisionSound : MonoBehaviour
     public int HitSoundID;
     Pickup_system Pickup;
     public bool isCube;
+    List<string> collisions = new List<string>();
     private void Start()
     {
         Pickup = GameObject.FindAnyObjectByType<Pickup_system>().GetComponent<Pickup_system>();
@@ -21,9 +23,14 @@ public class CubeCollisionSound : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        collisions.Add(collision.gameObject.transform.tag);
         Sound.PlayAudio(HitSoundID);
-        if (collision.gameObject.transform.CompareTag("StopCube"))
+        if (collisions.Contains("StopCube") && collisions.Contains("Player"))
             if (Pickup.grabbedOBJ)
                 Pickup.Ungrab();
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        collisions.Remove(collision.gameObject.transform.tag);
     }
 }

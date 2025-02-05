@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class load_scene_node : MonoBehaviour
 {
+    public Loading_Screen screen;
     public string[] sceneNames;
     public bool LoadOnAwake;
     [Tooltip("If scene should load as new or load on top of existing one. WARNING: IF NOT ENABLED, DO NOT ADD MORE THAN ONE SCENE.")]
@@ -25,7 +26,7 @@ public class load_scene_node : MonoBehaviour
             if (LoadOnTop)
                 SceneManager.LoadScene(name, LoadSceneMode.Additive);
             else
-                SceneManager.LoadScene(name, LoadSceneMode.Single);
+                screen.LoadScene(name);
         }
     }
 }

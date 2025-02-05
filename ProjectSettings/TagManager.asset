@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Floor
   - accept
   - key_sound
   - lockedNot
@@ -13,6 +12,7 @@ TagManager:
   - Physics
   - Cubefix
   - StopCube
+  - ButtonPresser
   layers:
   - Default
   - TransparentFX

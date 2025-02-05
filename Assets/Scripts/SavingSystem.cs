@@ -14,6 +14,7 @@ public class SavingSystem : MonoBehaviour
     public static bool isSavingEnabled = false;
     public CharacterControl player;
     public LaserGunLogic laser;
+    public Loading_Screen LoadingScreen;
     static public int currentSave = 0;
     static public string SaveType;
     static public bool Loading = false;
@@ -71,6 +72,7 @@ public class SavingSystem : MonoBehaviour
                 laser.Fired = true;
                 laser.ForceGive = true;
                 laser.GiveGun();
+                laser.EnabledLaser = data.isLaserGunEnabled;
             }
             if (data.isLaserSummoned)
             {
@@ -170,7 +172,7 @@ public class SavingSystem : MonoBehaviour
         SGUI.GetComponent<Animation>().Play();
         Debug.LogWarning("Saved " + "game" + SaveSlot.ToString() + ".sav" + " to" + Application.persistentDataPath + "/saves");
     }
-    public static void Load(int SaveSlot)
+    public void Load(int SaveSlot)
     {
         if (File.Exists(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav"))
         {
@@ -180,7 +182,7 @@ public class SavingSystem : MonoBehaviour
             FileStream stream = new FileStream(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav", FileMode.Open);
             GameData data = bf.Deserialize(stream) as GameData;
             stream.Close();
-            SceneManager.LoadScene(data.SceneName);
+            LoadingScreen.LoadScene(data.SceneName);
         }
         else
         {
@@ -197,6 +199,7 @@ public class GameData
     public int SaveID;
     public string SceneName;
     public bool hasLaserGun;
+    public bool isLaserGunEnabled;
     public bool isLaserSummoned;
     //-
     public List<bool> ifObjectHeld = new List<bool>();
@@ -259,6 +262,7 @@ public class GameData
         LaserDir[0] = coords.bufDirection.x;
         LaserDir[1] = coords.bufDirection.y;
         LaserDir[2] = coords.bufDirection.z;
+        isLaserGunEnabled = gun.EnabledLaser;
         hasLaserGun = gun.isGiven;
         isLaserSummoned = gun.IsSet;
         try

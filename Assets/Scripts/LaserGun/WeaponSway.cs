@@ -1,39 +1,114 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class WeaponSway : MonoBehaviour
 {
-    bool canSway = true;
 
-    public float Amount = 0.1f;
-    public float maxAmount = 0.1f;
-    public float SmoothAmount = 2;
-    public Transform parent;
+    public CharacterController mover;
 
-    private Vector3 initialPositon;
+    [Header("Sway")]
+    public float step = 0.01f;
+    public float maxStepDistance = 0.06f;
+    Vector3 swayPos;
 
-    // Start is called before the first frame update
-    void Start()
+    [Header("Sway Rotation")]
+    public float rotationStep = 4f;
+    public float maxRotationStep = 5f;
+    Vector3 swayEulerRot;
+
+    public float smooth = 10f;
+    float smoothRot = 12f;
+
+    [Header("Bobbing")]
+    public float speedCurve;
+    float curveSin { get => Mathf.Sin(speedCurve); }
+    float curveCos { get => Mathf.Cos(speedCurve); }
+
+    public Vector3 travelLimit = Vector3.one * 0.025f;
+    public Vector3 bobLimit = Vector3.one * 0.01f;
+    Vector3 bobPosition;
+
+    public float bobExaggeration;
+
+    [Header("Bob Rotation")]
+    public Vector3 multiplier;
+    Vector3 bobEulerRotation;
+    private Vector3 initialPos;
+
+    private void Awake()
     {
-        initialPositon = transform.localPosition;
-        canSway = true;
+        initialPos = transform.localPosition;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (canSway == true && base.transform.parent == parent)
+        GetInput();
+
+        Sway();
+        SwayRotation();
+        BobOffset();
+        BobRotation();
+
+        CompositePositionRotation();
+    }
+
+
+    Vector2 walkInput;
+    Vector2 lookInput;
+
+    void GetInput()
+    {
+        walkInput.x = Input.GetAxis("Horizontal");
+        walkInput.y = Input.GetAxis("Vertical");
+        walkInput = walkInput.normalized;
+
+        lookInput.x = Input.GetAxis("Mouse X");
+        lookInput.y = Input.GetAxis("Mouse Y");
+    }
+
+
+    void Sway()
+    {
+        Vector3 invertLook = lookInput * -step;
+        invertLook.x = Mathf.Clamp(invertLook.x, -maxStepDistance, maxStepDistance);
+        invertLook.y = Mathf.Clamp(invertLook.y, -maxStepDistance, maxStepDistance);
+
+        swayPos = invertLook + initialPos;
+    }
+
+    void SwayRotation()
+    {
+        Vector2 invertLook = lookInput * -rotationStep;
+        invertLook.x = Mathf.Clamp(invertLook.x, -maxRotationStep, maxRotationStep);
+        invertLook.y = Mathf.Clamp(invertLook.y, -maxRotationStep, maxRotationStep);
+        swayEulerRot = new Vector3(invertLook.y, invertLook.x, invertLook.x);
+    }
+
+    void CompositePositionRotation()
+    {
+        transform.localPosition = Vector3.Lerp(transform.localPosition, swayPos + bobPosition, Time.deltaTime * smooth);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(swayEulerRot) * Quaternion.Euler(bobEulerRotation), Time.deltaTime * smoothRot);
+    }
+
+    void BobOffset()
+    {
+        if (walkInput != Vector2.zero)
         {
-            float movementX = -Input.GetAxis("Mouse X") * Amount;
-            float movementY = -Input.GetAxis("Mouse Y") * Amount;
+            speedCurve += Time.deltaTime * (mover.isGrounded ? (Input.GetAxis("Horizontal") + Input.GetAxis("Vertical")) * bobExaggeration : 1f) + 0.01f;
 
-            movementX = Mathf.Clamp(movementX, -maxAmount, maxAmount);
-            movementY = Mathf.Clamp(movementY, -maxAmount, maxAmount);
-
-            Vector3 finalPosition = new Vector3(movementX, movementY, 0);
-            transform.localPosition = Vector3.Lerp(transform.localPosition, finalPosition + initialPositon, Time.deltaTime * SmoothAmount);
+            bobPosition.x = (Mathf.Cos(speedCurve) * bobLimit.x) - (walkInput.x * travelLimit.x);
+            bobPosition.y = (Mathf.Sin(speedCurve * 2) * bobLimit.y) - (walkInput.y * travelLimit.y);
+            bobPosition.z = -(walkInput.y * travelLimit.z);
+        }
         }
 
+        void BobRotation()
+    {
+        bobEulerRotation.x = (walkInput != Vector2.zero ? multiplier.x * (Mathf.Sin(2 * speedCurve)) : multiplier.x * (Mathf.Sin(2 * speedCurve) / 2));
+        bobEulerRotation.y = (walkInput != Vector2.zero ? multiplier.y * curveCos : 0);
+        bobEulerRotation.z = (walkInput != Vector2.zero ? multiplier.z * curveCos * walkInput.x : 0);
     }
+
+
 }

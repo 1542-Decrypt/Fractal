@@ -5,31 +5,34 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class FootSteps : MonoBehaviour
 {
+    public CharacterController mover;
     public MiscStuff speaker;
-    sound_node SoundMaster;
-    public string[] groundTypes;
-    public int[] WalkSoundIds;
-    public int JumpIndex;
+    public sound_node SoundMaster;
+    public sound_node JumpMaster;
+    public int JumpSoundId;
 
     internal int currentSurface;
-    internal bool Disabled = false;
-    public void PlayFootStep()
+    Vector2 walkInput;
+    Vector2 lookInput;
+    public void Update()
     {
-        for (int i = 0; i < groundTypes.Length; i++)
+        walkInput.x = Input.GetAxis("Horizontal");
+        walkInput.y = Input.GetAxis("Vertical");
+        walkInput = walkInput.normalized;
+        if (mover.isGrounded)
         {
-            if (groundTypes[i] == speaker.floortag)
+            if (walkInput != Vector2.zero)
             {
-                currentSurface = i;
-                break;
+                SoundMaster.AudiatedObject.enabled = true;
+            }
+            else
+            {
+                SoundMaster.AudiatedObject.enabled = false;
             }
         }
-        if (Disabled != true)
-        {
-            SoundMaster.PlayAudio(WalkSoundIds[currentSurface]);
-        }
     }
-    public void PlayJump()
+        public void PlayJump()
     {
-        //SoundMaster.PlayAudio(WalkSoundIds[JumpIndex]);
+        JumpMaster.PlayAudio(JumpSoundId);
     }
 }

@@ -12,6 +12,8 @@ public class Rotating_platform_logic : MonoBehaviour
     private bool Reached;
     [SerializeField]private bool Started = false;
     private int Mod;
+
+    private bool Blocked = false;
     void Update()
     {
         if (Continuous)
@@ -36,7 +38,7 @@ public class Rotating_platform_logic : MonoBehaviour
         {
             if (Started && !Pause.Paused)
             {
-                print("Turning is"+Started);
+                print("Turning is" + Started);
                 float Angle;
                 if (Mod == -1)
                 {
@@ -58,6 +60,11 @@ public class Rotating_platform_logic : MonoBehaviour
             }
         }
     }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (Blocked)
+    //        Started = true;
+    //}
     public void Turn(int Modifier)
     {
         Started = true;
