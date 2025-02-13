@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Chambers/Chamber02.unity
+- path: Assets/Scenes/Chambers/Chamber01.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

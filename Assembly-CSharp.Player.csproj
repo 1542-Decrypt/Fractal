@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\GlassController.cs" />
     <Compile Include="Assets\Scripts\Loading_Screen.cs" />
     <Compile Include="Assets\Scripts\tips.cs" />
+    <Compile Include="Assets\Scripts\Nodes\screen_shake_master.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
     <Compile Include="Assets\Scripts\Nodes\Save_en_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\DebugCheck.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Scripts\quit.cs" />
     <Compile Include="Assets\Scripts\SavingSystem.cs" />
     <Compile Include="Assets\Scripts\PropObject.cs" />
+    <Compile Include="Assets\Scripts\Nodes\perpetual_rotation_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\LaserDisabler.cs" />
     <Compile Include="Assets\Scripts\Nodes\door_node.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\CharacterControl.cs" />

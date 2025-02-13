@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Chambers/Chamber01.unity
     guid: 7ca66757329ba6e4899d892030f0c722
   - enabled: 1
+    path: Assets/Scenes/Chambers/Chamber02.unity
+    guid: c3e534eaa13bf7646bf8755e78ee59e6
+  - enabled: 1
     path: Assets/Scenes/Base.unity
     guid: 1011d49866ebaed4d8361a150d11e5d4
   - enabled: 0

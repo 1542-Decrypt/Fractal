@@ -1,8 +1,10 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class fade_node : MonoBehaviour
 {
+    public UnityEvent On_finish_fade;
     public bool DoNotPlay;
     enum FadeType { In, Out }
     [SerializeField] FadeType FadeTp;
@@ -42,6 +44,7 @@ public class fade_node : MonoBehaviour
         if (started && FadeTime <= 0)
         {
             started = false;
+            On_finish_fade.Invoke();
         }
     }
     public void OnTrigger()

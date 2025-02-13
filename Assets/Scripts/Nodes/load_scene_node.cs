@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class load_scene_node : MonoBehaviour
 {
+    public RawImage FadeHelper;
     public Loading_Screen screen;
     public string[] sceneNames;
     public bool LoadOnAwake;
@@ -26,7 +28,7 @@ public class load_scene_node : MonoBehaviour
             if (LoadOnTop)
                 SceneManager.LoadScene(name, LoadSceneMode.Additive);
             else
-                screen.LoadScene(name);
+                screen.On_Start_Loading_NoFade.Invoke();
         }
     }
 }

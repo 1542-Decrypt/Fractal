@@ -14,6 +14,7 @@ public class Pause : MonoBehaviour
     public GameObject PauseUI, SavingUI;
     public GameObject prefab, prefparent, noSavesText;
     public SavingSystem SaveSys;
+    public Loading_Screen screen;
     public KeyCode PauseButton;
 
     public UnityEvent WarningOverwrite;
@@ -139,7 +140,7 @@ public class Pause : MonoBehaviour
         }
         else
         {
-            SaveSys.Load(SaveIndex);
+            screen.On_Start_Loading_NoFade.Invoke();
         }
     }
     public void SaveGame(bool Accept)

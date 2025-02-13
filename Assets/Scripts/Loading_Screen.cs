@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Threading.Tasks;
 using TMPro;
 using System.IO;
+using UnityEngine.Events;
 public class Loading_Screen : MonoBehaviour
 {
     public TextMeshProUGUI Tip;
@@ -13,6 +14,11 @@ public class Loading_Screen : MonoBehaviour
     public Image LoadingIcon;
     public Sprite[] spritearray;
     private AsyncOperation operation;
+    public UnityEvent On_Start_Loading_NoFade;
+    public UnityEvent On_Start_Loading;
+    public UnityEvent On_Finish_Loading;
+    string[] lines;
+
 
     public void LoadScene(string sceneName)
     {
@@ -20,10 +26,6 @@ public class Loading_Screen : MonoBehaviour
     }
     public IEnumerator LoadSceneWScreen(string SceneName)
     {
-        LoadingScreen.SetActive(true);
-        var lines = File.ReadAllLines(Application.persistentDataPath + "/tip_lines.txt");
-        var randomIndex = Random.Range(0, lines.Length);
-        Tip.text = lines[randomIndex];
         operation = SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Single);
         operation.allowSceneActivation = false;
         float progress = 0;
@@ -34,24 +36,20 @@ public class Loading_Screen : MonoBehaviour
             if (operation.progress >= 0.9f)
             {
                 Slider.value = 1;
-                operation.allowSceneActivation = true;
+                On_Finish_Loading.Invoke();
             }
             yield return null;
         }
     }
-    async private void Update()
+    public void BootLoading()
     {
-        if (operation != null)
-        {
-            if (!operation.isDone)
-            {
-                for (int i = 0; i < spritearray.Length; i++)
-                {
-                    await Task.Delay(300);
-                    if (LoadingIcon.sprite != null)
-                        LoadingIcon.sprite = spritearray[i];
-                }
-            }
-        }
+        LoadingScreen.SetActive(true);
+        lines = File.ReadAllLines(Application.persistentDataPath + "/tip_lines.txt");
+        var randomIndex = Random.Range(0, lines.Length);
+        Tip.text = lines[randomIndex];
+    }
+    public void ActivateScene()
+    {
+        operation.allowSceneActivation = true;
     }
 }
