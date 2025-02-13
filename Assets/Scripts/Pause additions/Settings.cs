@@ -48,9 +48,9 @@ public class Settings : MonoBehaviour
     private Grain grain = null;
     private ChromaticAberration ca = null;
     private Vignette vignette = null;
-
     private void Start()
     {
+        AudioListener.volume = 0;
         volume.profile.TryGetSettings(out bloom);
         volume.profile.TryGetSettings(out ao);
         volume.profile.TryGetSettings(out grain);
@@ -93,6 +93,10 @@ public class Settings : MonoBehaviour
     }
     public void LoadSettings()
     {
+        if (!File.Exists(Application.persistentDataPath + "/options.json"))
+        {
+            return;
+        }
         string json = File.ReadAllText(Application.persistentDataPath + "/options.json");
         SettingsPrefs data = JsonUtility.FromJson<SettingsPrefs>(json);
         Sliders[0].value = data.Sensivity;
@@ -121,6 +125,10 @@ public class Settings : MonoBehaviour
         }
         else
         {
+            mixer.SetFloat("master", Mathf.Log10(data.MasterVolume) * 20);
+            mixer.SetFloat("music", Mathf.Log10(data.MusicVolume) * 20);
+            mixer.SetFloat("sfx", Mathf.Log10(data.SoundVolume) * 20);
+            print("Loaded Values");
             foreach (dev_comment DC in GameObject.FindObjectsByType<dev_comment>(FindObjectsInactive.Include, FindObjectsSortMode.None))
             {
                 print("Name is " + DC.gameObject.name);
@@ -149,9 +157,6 @@ public class Settings : MonoBehaviour
                 RevMouseMod = 1;
             }
             character.lookSpeed = data.Sensivity * RevMouseMod;
-            mixer.SetFloat("master", Mathf.Log10(data.MasterVolume) * 20);
-            mixer.SetFloat("music", Mathf.Log10(data.MusicVolume) * 20);
-            mixer.SetFloat("sfx", Mathf.Log10(data.SoundVolume) * 20);
             QualitySettings.SetQualityLevel(data.Quality);
             if (data.DisplayMode == 0)
             {

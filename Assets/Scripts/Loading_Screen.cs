@@ -11,8 +11,6 @@ public class Loading_Screen : MonoBehaviour
     public TextMeshProUGUI Tip;
     public GameObject LoadingScreen;
     public Slider Slider;
-    public Image LoadingIcon;
-    public Sprite[] spritearray;
     private AsyncOperation operation;
     public UnityEvent On_Start_Loading_NoFade;
     public UnityEvent On_Start_Loading;

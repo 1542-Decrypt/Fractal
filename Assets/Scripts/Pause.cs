@@ -21,6 +21,7 @@ public class Pause : MonoBehaviour
     public UnityEvent WarningDelete;
     public UnityEvent WarningExit;
 
+    public static string SaveIndName;
     public static int SaveIndex;
     public static bool Paused;
     private bool isGunDisabledByDef;
@@ -121,6 +122,7 @@ public class Pause : MonoBehaviour
                 GameData data = bf.Deserialize(stream) as GameData;
                 stream.Close();
                 slot.GetComponent<SaveSlotHandler>().Index = data.SaveID;
+                slot.GetComponent<SaveSlotHandler>().SlotName = data.SceneName;
                 print(data.SceneName);
                 slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = data.SceneName;
                 slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = data.Date;
@@ -140,8 +142,13 @@ public class Pause : MonoBehaviour
         }
         else
         {
-            screen.On_Start_Loading_NoFade.Invoke();
+            //screen.On_Start_Loading_NoFade.Invoke();
+            SaveSys.Load(SaveIndex);
         }
+    }
+    public void LoadFurther()
+    {
+        screen.LoadScene(SaveIndName);
     }
     public void SaveGame(bool Accept)
     {
