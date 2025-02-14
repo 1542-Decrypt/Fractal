@@ -435,7 +435,7 @@
 "Assets/Scripts/CharacterLogic/CheckGround.cs"
 "Assets/Scripts/CharacterLogic/FootSteps.cs"
 "Assets/Scripts/CharacterLogic/MiscStuff.cs"
-"Assets/Scripts/CharacterLogic/zoom_in.cs"
+"Assets/Scripts/CharacterLogic/zoomCamera.cs"
 "Assets/Scripts/CubeLogic/CubeCollisionSound.cs"
 "Assets/Scripts/CubeLogic/Pickup_system.cs"
 "Assets/Scripts/CubeLogic/PointRay.cs"

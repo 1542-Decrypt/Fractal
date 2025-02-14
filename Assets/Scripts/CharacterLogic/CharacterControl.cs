@@ -58,7 +58,8 @@ public class CharacterControl : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.LeftControl) || MiscStuff.ForceCrouch == true) && canMove)
         {
-            characterController.height = crouchHeight;
+            if (characterController.height != crouchHeight)
+                characterController.height = Mathf.MoveTowards(characterController.height, crouchHeight, Time.deltaTime * 4);
             walkSpeed = crouchSpeed;
             runSpeed = crouchSpeed;
             MiscStuff.PlayerCrouching = true;
@@ -66,7 +67,8 @@ public class CharacterControl : MonoBehaviour
         else
         {
             MiscStuff.PlayerCrouching = false;
-            characterController.height = defaultHeight;
+            if (characterController.height != defaultHeight)
+                characterController.height = Mathf.MoveTowards(characterController.height, defaultHeight, Time.deltaTime * 4);
             walkSpeed = 4f;
             runSpeed = 4f;
         }
