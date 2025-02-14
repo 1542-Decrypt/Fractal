@@ -61,6 +61,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.27f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CharacterLogic\zoom_in.cs" />
     <Compile Include="Assets\Scripts\Trigger_block.cs" />
     <Compile Include="Assets\Scripts\Fizzler_logic.cs" />
     <Compile Include="Assets\Scripts\Nodes\on_start_node.cs" />
