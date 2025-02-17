@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LaserDisabler : MonoBehaviour
 {
-    public bool DoNotPlay;
+    internal bool DoNotPlay;
+    [Tooltip("Laser gun, which will be disabled upon its activation.")]
     [SerializeField]LaserGunLogic Gun;
     private void Start()
     {

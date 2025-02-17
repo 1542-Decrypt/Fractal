@@ -4,31 +4,9 @@ using UnityEngine.UI;
 
 public class load_scene_node : MonoBehaviour
 {
-    public RawImage FadeHelper;
     public Loading_Screen screen;
-    public string[] sceneNames;
-    public bool LoadOnAwake;
-    [Tooltip("If scene should load as new or load on top of existing one. WARNING: IF NOT ENABLED, DO NOT ADD MORE THAN ONE SCENE.")]
-    public bool LoadOnTop;
-    private void Awake()
-    {
-        if (LoadOnAwake)
-        {
-            Load();
-        }
-    }
     public void Load()
     {
-        if (!LoadOnTop && sceneNames.Length > 1) { 
-            Debug.LogError("More than 1 scene cannot be loaded separately"); 
-            return;
-        }
-        foreach (string name in sceneNames)
-        {
-            if (LoadOnTop)
-                SceneManager.LoadScene(name, LoadSceneMode.Additive);
-            else
-                screen.On_Start_Loading_NoFade.Invoke();
-        }
+        screen.On_Loading.Invoke();
     }
 }

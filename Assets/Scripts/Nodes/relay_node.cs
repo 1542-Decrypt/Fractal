@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class relay_node : MonoBehaviour
 {
-    public bool DoNotPlay;
+    internal bool DoNotPlay;
+    [Tooltip("Activates upon its activation by a different node.")]
     public UnityEvent Output_OnTrigger;
     public void OnTrigger()
     {

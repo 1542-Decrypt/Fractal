@@ -5,15 +5,22 @@ using System.Threading.Tasks;
 public class button_node : MonoBehaviour
 {
     internal bool Active = false;
+    [Tooltip("Key to interact. Advised to set the same key which is set to other buttons. (E)")]
     public KeyCode Interact;
+    [Tooltip("Set by default, do not change. If it is a custom model, set the object which will play the animation once button is 'pressed'")]
     public Animation AnimPlayer;
+    [Tooltip("Set by default, do not change.")]
     public sound_node SoundPlayer;
+    [Tooltip("If true, button will not press back if not pressed again.")]
     public bool Toggleable;
+    [Tooltip("ID of a sound, which will play when button is pressed. Use soundscape manager as a reference.")]
     public int pressSoundID;
     [Range(-1f, 25f)]
     [Tooltip("Negative values will make button not press back")]
     [SerializeField] float pressTime = 0.5f;
+    [Tooltip("Activates once button is pressed.")]
     public UnityEvent Output_OnEnable;
+    [Tooltip("Activates once button is unpressed.")]
     public UnityEvent Output_OnDisable;
 
     private int AnimState;

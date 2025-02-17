@@ -24,11 +24,22 @@ public class Pause : MonoBehaviour
     public static string SaveIndName;
     public static int SaveIndex;
     public static bool Paused;
+
     private bool isGunDisabledByDef;
+    static public bool PauseDisabled;
 
     private bool disabledGun = false;
+
+    private void Start()
+    {
+        PauseDisabled = false;
+    }
     public void PauseGame()
     {
+        if (PauseDisabled)
+        {
+            return;
+        }
         if (SavingUI.activeSelf)
         {
             RefreshSaveFolder();
@@ -75,6 +86,10 @@ public class Pause : MonoBehaviour
     }
     private void Update()
     {
+        if (PauseDisabled)
+        {
+            ContinueGame();
+        }
         if (Input.GetKeyDown(PauseButton))
         {
             if (!Paused)
@@ -145,10 +160,6 @@ public class Pause : MonoBehaviour
             //screen.On_Start_Loading_NoFade.Invoke();
             SaveSys.Load(SaveIndex);
         }
-    }
-    public void LoadFurther()
-    {
-        screen.LoadScene(SaveIndName);
     }
     public void SaveGame(bool Accept)
     {

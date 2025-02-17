@@ -28,6 +28,7 @@ public class Settings : MonoBehaviour
     private bool Grain = true;
     private bool Vignette = true;
     private bool MuteWhenClosed = true;
+    private bool DReflections = true;
 
     private float Sensivity = 1.0f;
     private float MasterVolume = 1.0f;
@@ -67,29 +68,37 @@ public class Settings : MonoBehaviour
     }
     public void Apply()
     {
-        SettingsPrefs Prefs = new SettingsPrefs(Crosshair, ReversedMouse, Filter, AO, ChromAbbr, Bloom, Vignette, Grain, MuteWhenClosed, Sensivity, MasterVolume, SoundVolume, MusicVolume, Quality, DisplayMode, Captioning, Resolution, DevComment);
+        SettingsPrefs Prefs = new SettingsPrefs(Crosshair, ReversedMouse, Filter, AO, ChromAbbr, Bloom, Vignette, Grain, MuteWhenClosed, Sensivity, MasterVolume, SoundVolume, MusicVolume, Quality, DisplayMode, Captioning, Resolution, DevComment, DReflections);
         string settings = JsonUtility.ToJson(Prefs, true);
         File.WriteAllText(Application.persistentDataPath + "/options.json", settings);
         LoadSettings();
     }
     public void Cancel()
     {
-        Crosshair = true;
-        ReversedMouse = false;
-        Filter = true;
-        AO = true;
-        ChromAbbr = true;
-        Bloom = true;
-        Grain = true;
-        Vignette = true;
-        MuteWhenClosed = true;
-        Sensivity = 2.0f;
-        MasterVolume = 0f;
-        MusicVolume = 0f;
-        SoundVolume = 0f;
-        Quality = 2;
-        DisplayMode = 1;
-        Captioning = 0;
+        if (!File.Exists(Application.persistentDataPath + "/options.json"))
+        {
+            Crosshair = true;
+            ReversedMouse = false;
+            Filter = true;
+            AO = true;
+            ChromAbbr = true;
+            Bloom = true;
+            Grain = true;
+            Vignette = true;
+            MuteWhenClosed = true;
+            DReflections = true;
+            Sensivity = 2.0f;
+            MasterVolume = 0f;
+            MusicVolume = 0f;
+            SoundVolume = 0f;
+            Quality = 2;
+            DisplayMode = 1;
+            Captioning = 0;
+        }
+        else
+        {
+            LoadSettings();
+        }
     }
     public void LoadSettings()
     {
@@ -117,6 +126,7 @@ public class Settings : MonoBehaviour
         Toggles[7].isOn = data.Vignette;
         Toggles[8].isOn = data.Grain;
         Toggles[9].isOn = data.MuteWhenClosed;
+        Toggles[10].isOn = data.DReflections;
         if (CrosshairObj == null)
         {
             mixer.SetFloat("master", Mathf.Log10(data.MasterVolume) * 20);
@@ -140,6 +150,13 @@ public class Settings : MonoBehaviour
             grain.active = data.Grain;
             ca.active = data.ChromAbbr;
             vignette.active = data.Vignette;
+            foreach (ReflectionProbe reflections in GameObject.FindObjectsByType<ReflectionProbe>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            {
+                if (!data.DReflections)
+                    reflections.refreshMode = UnityEngine.Rendering.ReflectionProbeRefreshMode.OnAwake;
+                else
+                    reflections.refreshMode = UnityEngine.Rendering.ReflectionProbeRefreshMode.EveryFrame;
+            }
             if (!data.Filter)
             {
                 cam.targetTexture = null;
@@ -187,6 +204,10 @@ public class Settings : MonoBehaviour
             }
             MWC = data.MuteWhenClosed;
         }
+    }
+    public void SetBool11(bool value)
+    {
+        DReflections = value;
     }
     public void SetBool0(bool value)
     {
@@ -277,6 +298,7 @@ public class SettingsPrefs
     public bool Grain;
     public bool Vignette;
     public bool MuteWhenClosed;
+    public bool DReflections;
 
     public float Sensivity;
     public float MasterVolume;
@@ -288,10 +310,10 @@ public class SettingsPrefs
     public int Captioning;
     public int Resolution;
 
-    public SettingsPrefs(bool Crshr, bool RevM, bool Fltr, bool AmbO, bool ChrAbbr, bool Blom, bool Grn, bool Vign, bool MWC, float Snsv, float MastVol, float MusVol, float SndVol, int Qual, int DM, int Capt, int Res, bool devComment)
+    public SettingsPrefs(bool Crshr, bool RevM, bool Fltr, bool AmbO, bool ChrAbbr, bool Blom, bool Grn, bool Vign, bool MWC, float Snsv, float MastVol, float MusVol, float SndVol, int Qual, int DM, int Capt, int Res, bool devComment, bool DReflect)
     {
         appVersion = Application.version;
-        bool[] Bools = { Crshr, RevM, Fltr, AmbO, ChrAbbr, Blom, Grn, Vign, MWC };
+        bool[] Bools = { Crshr, RevM, Fltr, AmbO, ChrAbbr, Blom, Grn, Vign, MWC, DReflect };
         float[] Floats = { Snsv, MastVol, MusVol, SndVol };
         int[] Ints = { Qual, DM, Capt, Res };
         Crosshair = Bools[0];
@@ -312,5 +334,6 @@ public class SettingsPrefs
         Captioning = Ints[2];
         Resolution = Ints[3];
         DevComment = devComment;
+        DReflections = DReflect;
     }
 }

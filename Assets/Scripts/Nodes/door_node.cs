@@ -5,11 +5,17 @@ using UnityEngine;
 public class door_node : MonoBehaviour
 {
     enum DoorType { Classic, Push }
+    [Tooltip("Classic - normal door with handle, Push - P2 old aperture-ahh push door. Push door cannot be closed, unlike Classic one.")]
     [SerializeField] DoorType Doors;
+    [Tooltip("Object, which will play the animation.")]
     public Animation AnimPlayer;
+    [Tooltip("Object, which will play the sound.")]
     public sound_node SoundPlayer;
+    [Tooltip("Sound IDS for different doors.")]
     public int ClassicID, ClassicCloseID, PushID;
+    [Tooltip("Set as (E), (E) is interaction key for now, until I will unfiy them in one controls manager-ahh script.")]
     public KeyCode Interact;
+    [Tooltip("Locked means door cannot be opened. You cant unlock them properly, except using nodes.")]
     public bool Locked;
     bool Active = false;
     bool Open = false;

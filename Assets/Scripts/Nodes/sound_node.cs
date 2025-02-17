@@ -7,17 +7,21 @@ using UnityEngine.Events;
 // im SUPER proud of this one as well as the whole soundscape system.
 public class sound_node : MonoBehaviour
 {
-    public bool DoNotPlay;
+    internal bool DoNotPlay;
     [Tooltip("The object that will emit sound. Will be set automatically to this objects parent if not set at first.")]
     public AudioSource AudiatedObject;
-    private GameObject subtitle_object;
     bool Loop;
+    [Tooltip("Should sound be played at start")]
     public bool PlayOnStart;
+    [Tooltip("Which sound should be played at start")]
     public int StartID;
     AudioClip clip;
+    [Tooltip("Text object (not in scene) [DO NOT EDIT] ")]
     public GameObject TextPrefab;
+    [Tooltip("Activates once sound has finished playing.")]
     public UnityEvent On_Sound_Finish;
 
+    private GameObject subtitle_object;
     private bool isWaitingToPlay = false;
     private float DelayTimeGlobal;
     private bool delayPaused = false;
@@ -124,6 +128,7 @@ public class sound_node : MonoBehaviour
         //Mostly unused but why dont have it.
         AudiatedObject.loop = false;
         AudiatedObject.Stop();
+        On_Sound_Finish.Invoke();
     }
     public void Disable()
     {

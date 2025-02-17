@@ -5,7 +5,10 @@ using UnityEngine;
 public class DoorMaster : MonoBehaviour
 {
     [SerializeField]
-    private int openSoundID, closeSoundID;
+    [Tooltip("Door open sound ID. Seek ID in soundscape manager node.")]
+    public int openSoundID;
+    [Tooltip("Door close sound ID. Seek ID in soundscape manager node.")]
+    public int closeSoundID;
     [SerializeField]
     private sound_node soundPlayer;
     public void Open_Door()

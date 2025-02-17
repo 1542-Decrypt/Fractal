@@ -3,7 +3,9 @@ using UnityEngine.Events;
 
 public class StageSwitch : MonoBehaviour
 {
+    [Tooltip("Activates different coroutine (list of actions) on Awake() (Earlier than start). Based on which value is set there. Used for solving progression bugs upon loading.")]
     public UnityEvent[] OnValue;
+    [Tooltip("Activates different coroutine (list of actions) on Start() (A bit later). Based on which value is set there. Used for solving progression bugs upon loading.")]
     public UnityEvent[] OnValueLater;
     public void Switch(int value)
     {

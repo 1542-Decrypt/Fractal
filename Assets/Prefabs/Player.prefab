@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalFOV: 75
   zoomedFOV: 25
-  zoomSpeed: 200
+  zoomSpeed: 250
 --- !u!1 &7694792832174306696
 GameObject:
   m_ObjectHideFlags: 0

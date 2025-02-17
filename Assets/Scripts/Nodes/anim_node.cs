@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class anim_node : MonoBehaviour
 {
-    public bool DoNotPlay;
+    internal bool DoNotPlay;
+    [Tooltip("Object which will be animated.")]
     public Animation AnimatedObject;
     public void Disable()
     {

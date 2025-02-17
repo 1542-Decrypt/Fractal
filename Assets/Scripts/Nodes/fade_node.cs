@@ -5,24 +5,28 @@ using UnityEngine.Audio;
 
 public class fade_node : MonoBehaviour
 {
+    [Tooltip("Sets if sound should fade with screen")]
     public bool FadeSound;
+    [Tooltip("Activates once screen is faded out or in")]
     public UnityEvent On_finish_fade;
-    public bool DoNotPlay;
+    [SerializeField] internal bool DoNotPlay;
     enum FadeType { In, Out }
-    [SerializeField] FadeType FadeTp;
+    [Tooltip("Fade in or Fade out")]
+    [SerializeField] FadeType Fade_Type;
+    [Tooltip("Fade speed. Not advised to set higher than 1")]
     public float FadeModifier;
     float FadeTime = 1;
     RawImage Tint;
     float opacity = 1;
     float volume = 1;
     bool started = false;
-    float Cache_volume = 0;
     private void Awake()
     {
         Tint = GameObject.Find("fade_helper").GetComponent<RawImage>();
     }
     private void Update()
     {
+        print(AudioListener.volume);
         Color tmp = Tint.color;
         if (!started)
         {
@@ -39,13 +43,13 @@ public class fade_node : MonoBehaviour
         }
         if (started && FadeTime > 0)
         {
-            if (FadeTp == FadeType.In)
+            if (Fade_Type == FadeType.In)
             {
                 opacity += Time.deltaTime * FadeModifier;
                 if (FadeSound && volume >= 0)
                     volume -= Time.deltaTime * FadeModifier;
             }
-            else if (FadeTp == FadeType.Out)
+            else if (Fade_Type == FadeType.Out)
             {
                 opacity -= Time.deltaTime * FadeModifier;
                 if (FadeSound && volume <= 1)
@@ -65,7 +69,6 @@ public class fade_node : MonoBehaviour
         {
             return;
         }
-        AudioListener.pause = false;
         started = true;
     }
     public void Disable()

@@ -3,12 +3,18 @@ using UnityEngine;
 
 public class train_node : MonoBehaviour
 {
-    public bool DoNotPlay;
+    internal bool DoNotPlay;
+    [Tooltip("Activates once train starts")]
     public UnityEvent Output_OnStart;
+    [Tooltip("Activates once game arrives")]
     public UnityEvent Output_OnArrive;
+    [Tooltip("Start and end points of the train")]
     public Transform StartPoint, EndPoint;
-    [SerializeField][Range(0f, 20f)]float LerpTime;
+    [Tooltip("Time of moving between one point to another")]
+    [SerializeField][Range(0f, 20f)] float LerpTime;
+    [Tooltip("Train object")]
     public Transform DynamicObject;
+    [Tooltip("Sets if train is started. Not advised to use manually.")]
     [SerializeField] bool Started = false;
     CharacterController cc;
     private void Start()

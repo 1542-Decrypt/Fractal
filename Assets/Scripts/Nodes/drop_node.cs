@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class drop_node : MonoBehaviour
 {
+    [Tooltip("Object which will be dropped. Always set 'Cube' parameter for these as true, or else it will cause issues upon saving and loading.")]
     public GameObject prefab;
+    [Tooltip("Should drop the object at start?")]
     public bool dropAtStart;
 
     private sound_node soundMaster;

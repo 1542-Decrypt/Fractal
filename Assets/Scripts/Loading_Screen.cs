@@ -12,8 +12,7 @@ public class Loading_Screen : MonoBehaviour
     public GameObject LoadingScreen;
     public Slider Slider;
     private AsyncOperation operation;
-    public UnityEvent On_Start_Loading_NoFade;
-    public UnityEvent On_Start_Loading;
+    public UnityEvent On_Loading;
     public UnityEvent On_Finish_Loading;
     string[] lines;
 
@@ -41,8 +40,9 @@ public class Loading_Screen : MonoBehaviour
     }
     public void BootLoading()
     {
+        Pause.PauseDisabled = true;
         LoadingScreen.SetActive(true);
-        lines = File.ReadAllLines(Application.persistentDataPath + "/tip_lines.txt");
+        lines = File.ReadAllLines(".lang/tip_lines.txt");
         var randomIndex = Random.Range(0, lines.Length);
         Tip.text = lines[randomIndex];
     }

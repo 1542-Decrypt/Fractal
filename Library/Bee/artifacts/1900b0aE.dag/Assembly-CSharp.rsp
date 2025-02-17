@@ -467,6 +467,7 @@
 "Assets/Scripts/Nodes/floor_button_trigger.cs"
 "Assets/Scripts/Nodes/LaserDisabler.cs"
 "Assets/Scripts/Nodes/load_scene_node.cs"
+"Assets/Scripts/Nodes/NodeMaster.cs"
 "Assets/Scripts/Nodes/on_start_node.cs"
 "Assets/Scripts/Nodes/perpetual_rotation_node.cs"
 "Assets/Scripts/Nodes/relay_node.cs"

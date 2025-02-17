@@ -1,0 +1,7 @@
+Tip while you are loading: Consider respawning cubes.
+Tip while you are loading: press alt + F4 to win.
+Tip while you are loading: Laser reflections are limited.
+Tip while you are loading: Reciever lights show the accepted color.
+Tip while you are loading: F7 to load last save.
+Tip while you are loading: F6 to quick save.
+Tip while you are loading: Be aware of cake rumors.

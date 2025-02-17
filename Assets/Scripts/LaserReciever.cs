@@ -4,14 +4,21 @@ using UnityEngine.Events;
 
 public class LaserReciever : MonoBehaviour
 {
+    [Tooltip("Sound player.")]
     public sound_node soundManager;
+    [Tooltip("IDS for different states")]
     public int enableID, idleID, disableID;
     bool Enabled = false;
+    [Tooltip("If reciever, will play different animation. If its a relay, do not check this.")]
     public bool Is_Reciever = false;
+    [Tooltip("Needed color of a laser. Color should be precise, otherwise it wont work.")]
     public Color neededColor;
+    [Tooltip("Activates when enabled.")]
     public UnityEvent Output_OnEnable;
+    [Tooltip("Activates when disabled.")]
     public UnityEvent Output_OnDisable;
-    [SerializeField]int Queue;
+    [Tooltip("Makes scenario when 2 lasers activate one reciever, work.")]
+    int Queue;
     private void Update()
     {
         if (Queue < 0)

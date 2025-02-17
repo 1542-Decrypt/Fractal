@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class wait_node : MonoBehaviour
 {
-    public bool DoNotPlay;
+    internal bool DoNotPlay;
+    [Tooltip("Activates once time is passed. Warning: Time is not paused when you pause.")]
     public UnityEvent Output_OnTrigger;
     public void Disable()
     {

@@ -12,10 +12,13 @@ public class title_node : MonoBehaviour
 {
     public bool DoNotPlay;
     enum ShowType { WordByWord, FadeInOut }
+    [Tooltip("Word by word - P2-esque, when each letter fades in and fades out as a whole title. FadeInOut - Title just fades in, holds and fades out.")]
     [SerializeField] ShowType ShowingMethod;
     public float FadeinTime, HoldTime, FadeoutTime;
-    [Range (0f, 1f)]
+    [Range(0f, 1f)]
+    [Tooltip("Needed transparency value.")]
     public float NeededAlpha;
+    [Tooltip("Title text object.")]
     public TextMeshProUGUI m_TextComponent;
     Mesh mesh;
     [SerializeField] private int RolloverCharacterSpread = 1;

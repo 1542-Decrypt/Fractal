@@ -61,12 +61,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.27f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CharacterLogic\zoom_in.cs" />
     <Compile Include="Assets\Scripts\Trigger_block.cs" />
     <Compile Include="Assets\Scripts\Fizzler_logic.cs" />
     <Compile Include="Assets\Scripts\Nodes\on_start_node.cs" />
     <Compile Include="Assets\Scripts\LinkageHelper.cs" />
     <Compile Include="Assets\Scripts\Nodes\Rotating_platform_logic.cs" />
+    <Compile Include="Assets\Scripts\CharacterLogic\zoomCamera.cs" />
     <Compile Include="Assets\Scripts\Nodes\dev_comment.cs" />
     <Compile Include="Assets\Scripts\Nodes\relay_node.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\CeilingCheck.cs" />
@@ -121,6 +121,7 @@
     <Compile Include="Assets\Scripts\Nodes\AND_block.cs" />
     <Compile Include="Assets\Scripts\Nodes\StageSwitch.cs" />
     <Compile Include="Assets\Scripts\Nodes\sound_node.cs" />
+    <Compile Include="Assets\Scripts\Nodes\NodeMaster.cs" />
     <Compile Include="Assets\Scripts\LaserReciever.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\Pause additions\Settings.cs" />
