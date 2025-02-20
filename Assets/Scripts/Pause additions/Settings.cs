@@ -52,11 +52,14 @@ public class Settings : MonoBehaviour
     private void Start()
     {
         AudioListener.volume = 0;
-        volume.profile.TryGetSettings(out bloom);
-        volume.profile.TryGetSettings(out ao);
-        volume.profile.TryGetSettings(out grain);
-        volume.profile.TryGetSettings(out ca);
-        volume.profile.TryGetSettings(out vignette);
+        if (volume != null)
+        {
+            volume.profile.TryGetSettings(out bloom);
+            volume.profile.TryGetSettings(out ao);
+            volume.profile.TryGetSettings(out grain);
+            volume.profile.TryGetSettings(out ca);
+            volume.profile.TryGetSettings(out vignette);
+        }
         LoadSettings();
     }
     private void Update()
@@ -203,11 +206,8 @@ public class Settings : MonoBehaviour
                 Captions = 2;
             }
             MWC = data.MuteWhenClosed;
+            DReflections = data.DReflections;
         }
-    }
-    public void SetBool11(bool value)
-    {
-        DReflections = value;
     }
     public void SetBool0(bool value)
     {
@@ -248,6 +248,10 @@ public class Settings : MonoBehaviour
     public void SetBool9(bool value)
     {
         MuteWhenClosed = value;
+    }
+    public void SetBool11(bool value)
+    {
+        DReflections = value;
     }
     public void SetFloat1(float value)
     {

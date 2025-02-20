@@ -36292,7 +36292,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8404461470006356199}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: SetBool3
+        m_MethodName: SetBool11
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57932,7 +57932,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 0
+  m_RefreshMode: 1
   m_TimeSlicingMode: 0
   m_Resolution: 512
   m_UpdateFrequency: 0
@@ -57941,7 +57941,7 @@ ReflectionProbe:
   m_NearClip: 0.1
   m_FarClip: 1000
   m_ShadowDistance: 100
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_CullingMask:
     serializedVersion: 2
@@ -98358,7 +98358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351242576953306997, guid: b8ade2563eee6c048b37f12e9a9adbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -8.800003
       objectReference: {fileID: 0}
     - target: {fileID: 1675476524510348283, guid: b8ade2563eee6c048b37f12e9a9adbf5, type: 3}
       propertyPath: m_Name
@@ -103678,7 +103678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!111 &7412957120896353841 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 5936493392440905132, guid: a137db8a1084ba74491bb95171f15108, type: 3}
