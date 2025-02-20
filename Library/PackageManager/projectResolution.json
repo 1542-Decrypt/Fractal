@@ -32,6 +32,14 @@
       "version": "2.0.4",
       "source": "registry"
     },
+    "com.unity.cinemachine@3.1.3": {
+      "name": "com.unity.cinemachine",
+      "resolvedPath": "E:\\GitHub\\Fractal\\Library\\PackageCache\\com.unity.cinemachine",
+      "fingerprint": "624f919d8cdd376712eda21b43abcb0330c023e2",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "3.1.3",
+      "source": "registry"
+    },
     "com.unity.collab-proxy@2.5.2": {
       "name": "com.unity.collab-proxy",
       "resolvedPath": "E:\\GitHub\\Fractal\\Library\\PackageCache\\com.unity.collab-proxy",
@@ -380,6 +388,14 @@
       "version": "1.0.0",
       "source": "registry"
     },
+    "com.unity.splines@2.6.1": {
+      "name": "com.unity.splines",
+      "resolvedPath": "E:\\GitHub\\Fractal\\Library\\PackageCache\\com.unity.splines",
+      "fingerprint": "930eaf55e68be9f5d58f63035b2a96d9c3c3e695",
+      "editorCompatibility": "2022.3.0a1",
+      "version": "2.6.1",
+      "source": "registry"
+    },
     "com.unity.profiling.core@1.0.2": {
       "name": "com.unity.profiling.core",
       "resolvedPath": "E:\\GitHub\\Fractal\\Library\\PackageCache\\com.unity.profiling.core",
@@ -426,6 +442,14 @@
       "fingerprint": "fb0dc592af8b524f1a06c50d7caf95552f1bcd2f",
       "editorCompatibility": "2020.3.0a1",
       "version": "3.0.3",
+      "source": "registry"
+    },
+    "com.unity.settings-manager@2.0.1": {
+      "name": "com.unity.settings-manager",
+      "resolvedPath": "E:\\GitHub\\Fractal\\Library\\PackageCache\\com.unity.settings-manager",
+      "fingerprint": "56a930affa1e4462d3595b5c19a1c2a4bf2015d2",
+      "editorCompatibility": "2018.4.0a1",
+      "version": "2.0.1",
       "source": "registry"
     }
   }

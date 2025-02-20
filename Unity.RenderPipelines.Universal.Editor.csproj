@@ -145,8 +145,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\EditorTool\GenericScriptablePath.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\Selection\SerializableSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Camera\UniversalRenderPipelineCameraUI.Environment.Skin.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\GUIFramework\GenericControl.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Converter\RenderPipelineConverterContainer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\GUIFramework\GenericControl.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\AssetPostProcessors\SketchupMaterialDescriptionPostprocessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\ShaderGraph\Targets\UniversalLitSubTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\GUIFramework\GenericDefaultControl.cs" />

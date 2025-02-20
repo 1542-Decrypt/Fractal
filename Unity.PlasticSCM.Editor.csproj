@@ -188,8 +188,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\AssetsUtils\Processor\AssetPostprocessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\UI\GUIActionRunner.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\UI\Progress\DrawProgressForMigration.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Inspector\InspectorAssetSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\AssetsUtils\SaveAssets.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Inspector\InspectorAssetSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Help\HelpData.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Views\PendingChanges\Dialogs\LaunchDependenciesDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Views\Branch\Dialogs\RenameBranchDialog.cs" />

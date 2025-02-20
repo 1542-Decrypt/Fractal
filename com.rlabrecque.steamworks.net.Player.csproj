@@ -77,9 +77,9 @@
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamHTTP\HTTPRequestHandle.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamInput\SteamInputActionEventCallbackPointer.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamHTTP\HTTPCookieContainerHandle.cs" />
-    <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\autogen\isteamgameserver.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamInventory\SteamItemInstanceID_t.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamNetworkingTypes\SteamNetworkingMessage_t.cs" />
+    <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\autogen\isteamgameserver.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamTypes\AccountID_t.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\types\SteamTypes\PartyBeaconID_t.cs" />
     <Compile Include="Assets\com.rlabrecque.steamworks.net\Runtime\autogen\isteamgameservernetworking.cs" />

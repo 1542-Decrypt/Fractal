@@ -1233,6 +1233,10 @@
       <Project>{54EFD113-CA36-A184-5D8B-1A736648BD0B}</Project>
       <Name>Unity.RenderPipelines.Universal.Shaders</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Cinemachine.Editor.csproj">
+      <Project>{E564D83A-816B-3624-94CB-157F64A19663}</Project>
+      <Name>Unity.Cinemachine.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Shared.csproj">
       <Project>{34BB800D-ADCD-338C-95BA-6CC4A4A449F7}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime.Shared</Name>
@@ -1265,6 +1269,10 @@
       <Project>{ED166035-CBA3-7B35-C086-ADCE351696BD}</Project>
       <Name>Unity.Multiplayer.Center.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Splines.csproj">
+      <Project>{91064E27-6F50-D663-F374-70847118BBEF}</Project>
+      <Name>Unity.Splines</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Simulator.Extension.csproj">
       <Project>{9F953C16-0226-0018-945D-EAB2F2EFDCF0}</Project>
       <Name>Unity.AdaptivePerformance.Simulator.Extension</Name>
@@ -1276,6 +1284,10 @@
     <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.csproj">
       <Project>{1779D4D1-24BB-C17F-8588-752EAA4725DC}</Project>
       <Name>Unity.RenderPipelines.GPUDriven.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Cinemachine.csproj">
+      <Project>{38FF912F-9813-3E63-6A55-3EBBBE988A32}</Project>
+      <Name>Unity.Cinemachine</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.Profiler.Editor.csproj">
       <Project>{88BA24CC-0F85-9FDE-0034-F4603A87C313}</Project>
@@ -1308,6 +1320,10 @@
     <ProjectReference Include="Unity.RenderPipelines.Universal.Config.Runtime.csproj">
       <Project>{7BC3A407-6C78-FB16-7F71-613CEDC0EEC9}</Project>
       <Name>Unity.RenderPipelines.Universal.Config.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Splines.Editor.csproj">
+      <Project>{671D6B97-5B45-36EA-D9C6-B461A78BDFFB}</Project>
+      <Name>Unity.Splines.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
       <Project>{B8AC4D0A-9149-91A9-5713-0C99321B3BAF}</Project>

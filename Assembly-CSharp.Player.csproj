@@ -85,8 +85,9 @@
     <Compile Include="Assets\Scripts\Nodes\DebugCheck.cs" />
     <Compile Include="Assets\Scripts\WiringManager.cs" />
     <Compile Include="Assets\Scripts\CubeLogic\Pickup_system.cs" />
-    <Compile Include="Assets\Scripts\Nodes\button_node.cs" />
+    <Compile Include="Assets\Scripts\Nodes\tp_node.cs" />
     <Compile Include="Assets\Scripts\Keycodes.cs" />
+    <Compile Include="Assets\Scripts\Nodes\button_node.cs" />
     <Compile Include="Assets\Scripts\CubeLogic\CubeCollisionSound.cs" />
     <Compile Include="Assets\Scripts\LevelStageHelper.cs" />
     <Compile Include="Assets\Scripts\Nodes\drop_node.cs" />
@@ -981,9 +982,17 @@
       <Project>{7970B687-CAA8-CE70-E25C-9A5F956943A9}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Splines.Player.csproj">
+      <Project>{25852CC3-52C0-9A78-191A-483F35065497}</Project>
+      <Name>Unity.Splines.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.Player.csproj">
       <Project>{FB3CB86B-9E0E-B41A-50FE-4F6E76CC4B0B}</Project>
       <Name>Unity.RenderPipelines.GPUDriven.Runtime.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Cinemachine.Player.csproj">
+      <Project>{A6C51D95-7D64-4A75-E98F-E24CC80DFE38}</Project>
+      <Name>Unity.Cinemachine.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
       <Project>{27FA040B-F5E5-0C96-1B85-BDF84A27A131}</Project>

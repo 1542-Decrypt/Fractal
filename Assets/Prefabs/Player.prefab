@@ -75,7 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04fcb78db32f334893e91388e284a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoNotPlay: 0
   AudiatedObject: {fileID: 0}
   PlayOnStart: 0
   StartID: 0
@@ -664,7 +663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04fcb78db32f334893e91388e284a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoNotPlay: 0
   AudiatedObject: {fileID: 0}
   PlayOnStart: 0
   StartID: 17
@@ -747,7 +745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04fcb78db32f334893e91388e284a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoNotPlay: 0
   AudiatedObject: {fileID: 0}
   PlayOnStart: 1
   StartID: 17

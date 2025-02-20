@@ -132,4 +132,11 @@ public class NodeMaster : MonoBehaviour
         GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         obj.name = prefab.name;
     }
+    [MenuItem("Assets/Create/Nodes/Teleport Node", false, 0)]
+    static void CreateTP()
+    {
+        GameObject prefab = Resources.Load("TP") as GameObject;
+        GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        obj.name = prefab.name;
+    }
 }

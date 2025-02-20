@@ -67,8 +67,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\RenderGraphResources.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\ListBuffer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\IRenderGraphRecorder.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Stripping\IStripper.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\Compiler\FixedAttachmentArray.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Stripping\IStripper.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerGroup.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderPipeline\RenderPipelineGlobalSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\ProbeVolume\ProbeVolumeAsset.cs" />
