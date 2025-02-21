@@ -103,7 +103,7 @@ public class Pause : MonoBehaviour
     public void RefreshSaveFolder()
     {
         SaveIndex = -1;
-        if (!SavingSystem.isSavingEnabled)
+        if (!SavingSystem.isSavingEnabled && savebutton != null)
         {
             savebutton.interactable = false;
         }
@@ -120,20 +120,22 @@ public class Pause : MonoBehaviour
             }
         }
         string[] files = Directory.GetFiles(Application.persistentDataPath + "/saves");
+        string[] pictures = Directory.GetFiles(Application.persistentDataPath + "/previews");
         GameObject slot = null;
         float pos = -30 + 55;
         if (files.Length > 0)
         {
             noSavesText.SetActive(false);
-            foreach (string file in files)
+            for (int i = 0; i < files.Length; i++)
             {
+                print(files[i]);
                 slot = Instantiate(prefab, prefparent.transform);
                 slot.GetComponent<RectTransform>().localPosition = new Vector3(114.715f, pos - 55, 0);
                 pos = slot.GetComponent<RectTransform>().localPosition.y;
                 slot.GetComponent<RectTransform>().localScale = new Vector3(1.2f, 1.2f, 1.2f);
                 slot.transform.GetChild(5).GetComponent<Toggle>().group = prefparent.GetComponent<ToggleGroup>();
                 BinaryFormatter bf = new BinaryFormatter();
-                FileStream stream = new FileStream(file, FileMode.Open);
+                FileStream stream = new FileStream(files[i], FileMode.Open);
                 GameData data = bf.Deserialize(stream) as GameData;
                 stream.Close();
                 slot.GetComponent<SaveSlotHandler>().Index = data.SaveID;
@@ -142,6 +144,16 @@ public class Pause : MonoBehaviour
                 slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = data.SceneName;
                 slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = data.Date;
                 slot.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = data.SaveType;
+                var bytes = File.ReadAllBytes(pictures[i]);
+                var texture = new Texture2D(2, 2);
+                if (texture.LoadImage(bytes))
+                {
+                    slot.transform.GetChild(6).GetComponent<RawImage>().texture = texture;
+                }
+                else
+                {
+                    Debug.LogError("Error when loading file as Texture2D!");
+                }
             }
         }
         else

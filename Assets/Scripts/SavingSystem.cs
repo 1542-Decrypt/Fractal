@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 public class SavingSystem : MonoBehaviour
 {
     public GameObject SaveGUI;
@@ -25,6 +26,10 @@ public class SavingSystem : MonoBehaviour
         if (!Directory.Exists(Application.persistentDataPath + "/saves"))
         {
             Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "saves"));
+        }
+        if (!Directory.Exists(Application.persistentDataPath + "/previews"))
+        {
+            Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "previews"));
         }
         //Refreshing currentSave
         string[] files = Directory.GetFiles(Application.persistentDataPath + "/saves");
@@ -150,13 +155,17 @@ public class SavingSystem : MonoBehaviour
     }
     public void Delete(int SaveSlot)
     {
-        currentSave = SaveSlot-1;
+        currentSave = SaveSlot - 1;
         File.Delete(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav");
+        string pathToImg = Application.persistentDataPath + "/previews/" + SaveSlot.ToString() + ".png";
+        if (File.Exists(pathToImg))
+            File.Delete(pathToImg);
     }
-    public static void Save(CharacterControl player, LaserGunLogic gun, int SaveSlot, ShootLaser coords, GameObject SGUI, bool Overwrite)
+    public void Save(CharacterControl player, LaserGunLogic gun, int SaveSlot, ShootLaser coords, GameObject SGUI, bool Overwrite)
     {
         Debug.LogWarning("Current Slot of saving is " + SaveSlot);
         BinaryFormatter bf = new BinaryFormatter();
+        StartCoroutine(SaveImage(SaveSlot));
         if (Overwrite == false)
         {
             while (File.Exists(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav"))
@@ -188,6 +197,12 @@ public class SavingSystem : MonoBehaviour
         {
             Debug.LogError("Save file not found!");
         }
+    }
+    static IEnumerator SaveImage(int SaveSlot)
+    {
+        yield return new WaitForEndOfFrame();
+        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + "/previews/" + SaveSlot + ".png", 1);
+
     }
 }
 [Serializable]
