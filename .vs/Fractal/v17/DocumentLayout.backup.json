@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{771AC626-A878-C944-1FCD-E4398FA41850}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\nodemaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|e:\\github\\fractal\\assets\\scripts\\nodes\\dev_comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|E:\\GitHub\\Fractal\\assets\\scripts\\nodes\\dev_comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nodes\\dev_comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -347,8 +347,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Nodes\\dev_comment.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T23:25:01.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T23:25:01.277Z"
             },
             {
               "$type": "Document",
@@ -360,8 +359,7 @@
               "RelativeToolTip": "Assets\\Editor\\NodeMaster.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAAAUwIYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T21:00:10.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-16T21:00:10.282Z"
             },
             {
               "$type": "Document",

@@ -23564,7 +23564,7 @@ GameObject:
   m_Layer: 0
   m_Name: SteamManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: ab5b14542f218ae4c824d61edf0510d8, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23589,7 +23589,7 @@ Transform:
   m_GameObject: {fileID: 1674521057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -87.1189, y: -445.10513, z: 135.89172}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36440,7 +36440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351242576953306997, guid: b8ade2563eee6c048b37f12e9a9adbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 1357417762860186082, guid: b8ade2563eee6c048b37f12e9a9adbf5, type: 3}
       propertyPath: m_Sprite

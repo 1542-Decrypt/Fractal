@@ -195,7 +195,7 @@ public class SavingSystem : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Save file not found!");
+            Debug.LogError("Save file at " + Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav" + " is not found!");
         }
     }
     static IEnumerator SaveImage(int SaveSlot)
